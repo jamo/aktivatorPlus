@@ -1,5 +1,8 @@
 AktivatorPlus::Application.routes.draw do
-  resources :courses
+  resources :courses do
+    resources :questions
+    
+  end
 
   root :to =>'Courses#index'
   # The priority is based upon order of creation:
