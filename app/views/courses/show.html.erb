@@ -8,3 +8,17 @@
 <%= link_to 'New question', new_course_question_path(@course)%>
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
+
+<h2>Kokeillaan tehdä tähän uuden kysymyksen teko</h2>
+
+<%= form_for([@course, @course.questions.build]) do |f| %>
+    <div class="field">
+    <%= f.label :name%> <br/>
+    <%= f.text_field :name%> <br/>
+    </div>
+    <div class="actions">
+    <%= f.submit %>
+    </div>
+
+
+<% end %>
