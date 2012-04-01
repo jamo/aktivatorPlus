@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   def create
     @course = Course.find(params[:course_id])
-    @question = @course.questions.create(params[:course])
+    @question = @course.questions.create(params[:question])
     redirect_to course_questions_path(@course)
   #redirect_to courses# course_questions(@post)
   #debugger
