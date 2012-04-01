@@ -1,0 +1,21 @@
+<h1>Listing questions for #(@course.name)</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @course.questions.each do |courseT| %>
+  <tr>
+    <td><%= courseT.name %></td>
+    <td><%= courseT.created_at %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Question', new_course_question_path %>

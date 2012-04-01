@@ -5,10 +5,11 @@
   <%= @course.name %>
 </p>
 
-<%= link_to 'New question', new_course_question_path(@course)%>
+<!--<%= link_to 'New question', new_course_question_path(@course)%>-->
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
 
+<%= link_to 'Questions', course_questions_path(@course)%>
 <h2>Kokeillaan tehdä tähän uuden kysymyksen teko</h2>
 
 <%= form_for([@course, @course.questions.build]) do |f| %>

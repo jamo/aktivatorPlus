@@ -1,15 +1,15 @@
+<h1>questions#new</h1><br/>
 <h1>New question </h1>
-<h1>questions#new</h1>
 
 
-<%= form_for(@course) do |f| %>
 
+<%= form_for([@course, @course.questions.build]) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
-   <%= f.text_field :name %>
+    <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit("submit") %>
+    <%= f.submit %>
   </div>
 <% end %>
 
