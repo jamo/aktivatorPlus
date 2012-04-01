@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(:version => 20120331182925) do
 
   create_table "questions", :force => true do |t|
     t.string   "name"
-    t.integer  "cource_id"
+    t.integer  "course_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "questions", ["cource_id"], :name => "index_questions_on_cource_id"
+  add_index "questions", ["course_id"], :name => "index_questions_on_course_id"
 
 end

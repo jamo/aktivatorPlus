@@ -1,10 +1,16 @@
 class QuestionsController < ApplicationController
 
   def create
-    debugger
     @course = Course.find(params[:course_id])
-    @question = @Course.questions.create(params[:course])
+    @question = @course.questions.create(params[:course])
     redirect_to post_path(@post)
+    debugger
+  end
+  
+  def new
+    @course = Course.find(params[:course_id])
+   #@question = @course.questions.create(params[:course])
+   #debugger
   end
   
   def show
