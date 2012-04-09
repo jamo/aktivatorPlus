@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 <h1> questions#show</h1>
-<p>
-  <b>Name:</b>
-  <%= @course.name %>
-</p>
-    
+
+  <h2>
+  <%= @question.name%>
+  </h2>
+
 <ol>
 <% @question.answer_options.each do |ao|  %>
     <li>
         <%= ao.title %>
+        <%= ao.answers.count %>
     </li>
 
 <% end %>

@@ -38,6 +38,7 @@ class QuestionsController < ApplicationController
     @answer_option4.save! if @answer_option4
     @answer_option5.save! if @answer_option5
     @answer_option6.save! if @answer_option6
+    #debugger
     @answer_option7.save! if @answer_option7
     @answer_option8.save! if @answer_option8
     @answer_option9.save! if @answer_option9
@@ -51,9 +52,11 @@ class QuestionsController < ApplicationController
 
   def show
     #tän pitäis näyttää vaan yksi kyssäri
+    #debugger
     @course = Course.find(params[:course_id])
-    @question = @course.questions.find(params[:course_id])
+    @question = @course.questions.find(params[:id])
     
+    #debugger
   end
   
   def edit
