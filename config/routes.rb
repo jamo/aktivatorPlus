@@ -1,7 +1,10 @@
 AktivatorPlus::Application.routes.draw do
   resources :courses do
-    resources :questions
-    
+    resources :questions do
+      resources :answer_options
+      
+     
+    end
   end
 
   root :to =>'Courses#index'
