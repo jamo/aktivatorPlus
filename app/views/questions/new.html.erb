@@ -5,29 +5,28 @@
 
 <%= form_for([@course, @course.questions.build]) do |f| %>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %><br/>
     Vastausvaihtoehto 1:
-     <%= f.text_field :answer_option1%>
-    Vastausvaihtoehto 2:<br/>
-    <%= f.text_field :answer_option2%>
-    Vastausvaihtoehto 3:<br/>
-    <%= f.text_field :answer_option3%>
-    Vastausvaihtoehto 4:<br/>
-    <%= f.text_field :answer_option4%>
-    Vastausvaihtoehto 5:<br/>
-    <%= f.text_field :answer_option5%>
-    Vastausvaihtoehto 6:<br/>
-    <%= f.text_field :answer_option6%>
-    Vastausvaihtoehto 7:<br/>
-    <%= f.text_field :answer_option7%>
-    Vastausvaihtoehto 8:<br/>
-    <%= f.text_field :answer_option8%>
-    Vastausvaihtoehto 9:<br/>
-    <%= f.text_field :answer_option9%>
-    Vastausvaihtoehto 10:<br/>
-    <%= f.text_field :answer_option10%>
-    
+    <%= text_field_tag 'answer_option1', nil %> <br />
+    Vastausvaihtoehto 2:
+    <%= text_field_tag 'answer_option2', nil %><br />
+    Vastausvaihtoehto 3:
+    <%= text_field_tag 'answer_option3', nil %><br />
+    Vastausvaihtoehto 4:
+    <%= text_field_tag 'answer_option4', nil %><br />
+    Vastausvaihtoehto 5:
+    <%= text_field_tag 'answer_option5', nil %><br />
+    Vastausvaihtoehto 6:
+    <%= text_field_tag 'answer_option6', nil %><br />
+    Vastausvaihtoehto 7:
+    <%= text_field_tag 'answer_option7', nil %><br />
+    Vastausvaihtoehto 8:
+    <%= text_field_tag 'answer_option8', nil %><br />
+    Vastausvaihtoehto 9:
+    <%= text_field_tag 'answer_option9', nil %><br />
+    Vastausvaihtoehto 10:
+    <%= text_field_tag 'answer_option10', nil %><br />
      <br/>
  
     

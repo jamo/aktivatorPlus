@@ -11,8 +11,7 @@
 
 <% @course.questions.each do |courseT| %>
   <tr>
-    <td><%= courseT.name %></td>
-    <td><%= courseT.created_at %></td>
+    <td><%= link_to "courseT.name", course_question_path(@course) %></td>
   </tr>
 <% end %>
 </table>
