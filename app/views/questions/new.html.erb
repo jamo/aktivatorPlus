@@ -6,7 +6,31 @@
 <%= form_for([@course, @course.questions.build]) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name %><br/>
+    Vastausvaihtoehto 1:
+     <%= f.text_field :answer_option1%>
+    Vastausvaihtoehto 2:<br/>
+    <%= f.text_field :answer_option2%>
+    Vastausvaihtoehto 3:<br/>
+    <%= f.text_field :answer_option3%>
+    Vastausvaihtoehto 4:<br/>
+    <%= f.text_field :answer_option4%>
+    Vastausvaihtoehto 5:<br/>
+    <%= f.text_field :answer_option5%>
+    Vastausvaihtoehto 6:<br/>
+    <%= f.text_field :answer_option6%>
+    Vastausvaihtoehto 7:<br/>
+    <%= f.text_field :answer_option7%>
+    Vastausvaihtoehto 8:<br/>
+    <%= f.text_field :answer_option8%>
+    Vastausvaihtoehto 9:<br/>
+    <%= f.text_field :answer_option9%>
+    Vastausvaihtoehto 10:<br/>
+    <%= f.text_field :answer_option10%>
+    
+     <br/>
+ 
+    
   </div>
   <div class="actions">
     <%= f.submit %>
