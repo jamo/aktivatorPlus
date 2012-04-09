@@ -11,7 +11,7 @@
 
 <% @course.questions.each do |question| %>
   <tr>
-    <td><%= link_to "question.name", course_question_path(@course.id, question) %></td>
+    <td><%= link_to "#{question.name}", course_question_path(@course.id, question) %></td>
   </tr>
 <% end %>
 </table>

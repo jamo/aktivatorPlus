@@ -3,8 +3,10 @@ class AnswersController < ApplicationController
   def new
     
     @course = Course.find(params[:course_id])
-    @question = @course.questions(params[:question_id])
+    @question = @course.question s(params[:question_id])
     @answer = Answer.new
+    @answer_options = 
+    debugger
 
   end
   

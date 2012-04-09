@@ -1,8 +1,26 @@
 class QuestionsController < ApplicationController
+  
+  
+  def new
+    @course = Course.find(params[:course_id])
+    @question = @course.questions.new
+    #@answer_option1 = @question.answer_options.new
+    #@answer_option2 = @question.answer_options.new
+    #@answer_option3 = @question.answer_options.new
+    #@answer_option4 = @question.answer_options.new
+    #@answer_option5 = @question.answer_options.new
+    #@answer_option6 = @question.answer_options.new
+    #@answer_option7 = @question.answer_options.new
+    #@answer_option8 = @question.answer_options.new
+    #@answer_option9 = @question.answer_options.new
+    #@answer_option10 = @question.answer_options.new
+
+  end
+  
   def create
     @course = Course.find(params[:course_id])
     @question = @course.questions.create(params[:question])
-    #debugger
+
     @answer_option1 = @question.answer_options.build(:choice => 1, :title => params[:answer_option1]) unless params[:answer_option1].blank?
     @answer_option2 = @question.answer_options.build(:choice => 2, :title => params[:answer_option2]) unless params[:answer_option2].blank?
     @answer_option3 = @question.answer_options.build(:choice => 3, :title => params[:answer_option3]) unless params[:answer_option3].blank?
@@ -13,8 +31,7 @@ class QuestionsController < ApplicationController
     @answer_option8 = @question.answer_options.build(:choice => 8, :title => params[:answer_option8]) unless params[:answer_option8].blank?
     @answer_option9 = @question.answer_options.build(:choice => 9, :title => params[:answer_option9]) unless params[:answer_option9].blank?
     @answer_option10 = @question.answer_options.build(:choice => 10, :title => params[:answer_option10] )unless params[:answer_option10].blank?
-    debugger
-    
+
     @answer_option1.save! if @answer_option1
     @answer_option2.save! if @answer_option2
     @answer_option3.save! if @answer_option3
@@ -31,26 +48,11 @@ class QuestionsController < ApplicationController
   #debugger
   end
 
-  def new
-    @course = Course.find(params[:course_id])
-    @question = @course.questions.new
-    #debugger
-    @answer_option1 = @question.answer_options.new
-    @answer_option2 = @question.answer_options.new
-    @answer_option3 = @question.answer_options.new
-    @answer_option4 = @question.answer_options.new
-    @answer_option5 = @question.answer_options.new
-    @answer_option6 = @question.answer_options.new
-    @answer_option7 = @question.answer_options.new
-    @answer_option8 = @question.answer_options.new
-    @answer_option9 = @question.answer_options.new
-    @answer_option10 = @question.answer_options.new
-
-  end
 
   def show
     #tän pitäis näyttää vaan yksi kyssäri
     @course = Course.find(params[:course_id])
+    @question = @course.questions.find(params[:course_id])
     
   end
   
