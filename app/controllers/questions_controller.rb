@@ -53,6 +53,13 @@ class QuestionsController < ApplicationController
     @course = Course.find(params[:course_id])
     
   end
+  
+  def edit
+    #Tää varmasti väärin - mut nyt debuggauksen vuoksi täällä :D
+    #tän pitäis näyttää vaan yksi kyssäri
+    @course = Course.find(params[:course_id])
+    
+  end
 
   def index
     #näyttää listauksen kaikista kyssäreistä

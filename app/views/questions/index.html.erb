@@ -9,9 +9,9 @@
     <th></th>
   </tr>
 
-<% @course.questions.each do |courseT| %>
+<% @course.questions.each do |question| %>
   <tr>
-    <td><%= link_to "courseT.name", course_question_path(@course) %></td>
+    <td><%= link_to "question.name", course_question_path(@course_id, @question_id) %></td>
   </tr>
 <% end %>
 </table>
