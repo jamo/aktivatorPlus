@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
     debugger
     @course = Course.find(params[:course_id])
     @question = @course.questions(params[:question_id])
-    @answer = Course.question.answer.new
+    @answer = @question.answer.new
   end
   
   def create
