@@ -1,15 +1,17 @@
 class AnswersController < ApplicationController
   
   def new
-    debugger
+    
     @course = Course.find(params[:course_id])
     @question = @course.questions(params[:question_id])
-    @answer = @question.answer.new
+    
+    @answer = Answer.new
+    debugger
+    
   end
   
   def create
-    debugger
-    @answer
+    
     
     
   end

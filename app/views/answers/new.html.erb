@@ -3,9 +3,5 @@
 <p> #{@question.title}</p>
 
 <ol>
-<% form_for @question do |f|%>
-    <% @question.answer_options.each do |q|%>
-        <li><%= q.title %> : <%= radio_button_tag 'answer_option_id', q.choice%> </li>
-    <% end %>
-<% end %>
+
 </ol>

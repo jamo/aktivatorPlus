@@ -5,10 +5,12 @@ class CreateAnswers < ActiveRecord::Migration
       t.text :body
       t.integer :choice
       t.references :question
+      t.references :course
       
 
       t.timestamps
     end
     add_index :answers, :question_id
+     add_index :answers, :course_id
   end
 end
