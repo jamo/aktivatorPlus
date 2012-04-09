@@ -66,6 +66,7 @@ class QuestionsController < ApplicationController
     @course = Course.find(params[:course_id])
     
     @questions = @course.questions
+    
   end
 
 end
