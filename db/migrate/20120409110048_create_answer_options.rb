@@ -8,5 +8,6 @@ class CreateAnswerOptions < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :answer_options, :question_id
   end
 end
