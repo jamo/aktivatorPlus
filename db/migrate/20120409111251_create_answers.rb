@@ -4,10 +4,10 @@ class CreateAnswers < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.integer :choice
-      t.references :answer_options
+      t.references :questions
 
       t.timestamps
     end
-    add_index :answers, :answer_options_id
+    add_index :answers, :questions_id
   end
 end

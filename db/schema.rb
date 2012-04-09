@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(:version => 20120409111251) do
     t.string   "title"
     t.text     "body"
     t.integer  "choice"
-    t.integer  "answer_options_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.integer  "questions_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
-  add_index "answers", ["answer_options_id"], :name => "index_answers_on_answer_options_id"
+  add_index "answers", ["questions_id"], :name => "index_answers_on_questions_id"
 
   create_table "courses", :force => true do |t|
     t.string   "name"
