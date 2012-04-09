@@ -3,16 +3,16 @@ class QuestionsController < ApplicationController
     @course = Course.find(params[:course_id])
     @question = @course.questions.create(params[:question])
     #debugger
-    @answer_option1 = @question.answer_options.build :title => params[:answer_option1] unless params[:answer_option1].blank?
-    @answer_option2 = @question.answer_options.build :title => params[:answer_option2] unless params[:answer_option2].blank?
-    @answer_option3 = @question.answer_options.build :title => params[:answer_option3] unless params[:answer_option3].blank?
-    @answer_option4 = @question.answer_options.build :title => params[:answer_option4] unless params[:answer_option4].blank?
-    @answer_option5 = @question.answer_options.build :title => params[:answer_option5] unless params[:answer_option5].blank?
-    @answer_option6 = @question.answer_options.build :title => params[:answer_option6] unless params[:answer_option6].blank?
-    @answer_option7 = @question.answer_options.build :title => params[:answer_option7] unless params[:answer_option7].blank?
-    @answer_option8 = @question.answer_options.build :title => params[:answer_option8] unless params[:answer_option8].blank?
-    @answer_option9 = @question.answer_options.build :title => params[:answer_option9] unless params[:answer_option9].blank?
-    @answer_option10 = @question.answer_options.build :title => params[:answer_option10] unless params[:answer_option10].blank?
+    @answer_option1 = @question.answer_options.build(:choice => 1, :title => params[:answer_option1]) unless params[:answer_option1].blank?
+    @answer_option2 = @question.answer_options.build(:choice => 2, :title => params[:answer_option2]) unless params[:answer_option2].blank?
+    @answer_option3 = @question.answer_options.build(:choice => 3, :title => params[:answer_option3]) unless params[:answer_option3].blank?
+    @answer_option4 = @question.answer_options.build(:choice => 4, :title => params[:answer_option4]) unless params[:answer_option4].blank?
+    @answer_option5 = @question.answer_options.build(:choice => 5, :title => params[:answer_option5]) unless params[:answer_option5].blank?
+    @answer_option6 = @question.answer_options.build(:choice => 6, :title => params[:answer_option6]) unless params[:answer_option6].blank?
+    @answer_option7 = @question.answer_options.build(:choice => 7, :title => params[:answer_option7]) unless params[:answer_option7].blank?
+    @answer_option8 = @question.answer_options.build(:choice => 8, :title => params[:answer_option8]) unless params[:answer_option8].blank?
+    @answer_option9 = @question.answer_options.build(:choice => 9, :title => params[:answer_option9]) unless params[:answer_option9].blank?
+    @answer_option10 = @question.answer_options.build(:choice => 10, :title => params[:answer_option10] )unless params[:answer_option10].blank?
     debugger
     
     @answer_option1.save! if @answer_option1

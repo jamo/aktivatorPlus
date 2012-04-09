@@ -4,15 +4,16 @@ class AnswersController < ApplicationController
     
     @course = Course.find(params[:course_id])
     @question = @course.questions(params[:question_id])
-    
     @answer = Answer.new
-    debugger
-    
+
   end
   
   def create
+    @answer_option1 = @question.answer.build(:choice => params[:choice], :question_id => @question_id, :course_id => @course_id)
     
     
+    #unless params[:answer_option1].blank?
+   
     
   end
   
