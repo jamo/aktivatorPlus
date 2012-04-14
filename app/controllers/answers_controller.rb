@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
     #debugger
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:question_id])
-    @answer = @question.answers.new(:course_id => 1)
+    @answer = @question.answers.new(:course_id => params[:course_id], :question_id => params[:question_id])
     #debugger
 
   end

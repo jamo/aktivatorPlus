@@ -2,12 +2,30 @@
 <h1>New Answer </h1>
 <h2> <%="#{@question.name}"%></h2>
 
+
+
+<!-- miksi tämä ei listaa vastausvaihtoehtoja. Debuggerissa @question.answer_options tuottaa nimusta oikeat viittaukset -->
+<ol>
+<p>pelkkä vastausvaihtoehtojen listaaminen toimii</p>
+<% @question.answer_options.each do |ao|  %>
+    <li>
+        <%= ao.title %>
+        <%= ao.answers.count %>
+    </li>
+
+<% end %>
+
+</ol>
 <ol>
 
+<p>Mutta form for kanssa se ei enää onnistu</p>
     <% form_for ([@course, @question ,@question.answers.build])  do |f|%>
-        <% @question.answer_options.each do |q|%>
-             <li><%= q.title %> : <%= radio_button_tag 'answer_option_id', q.choice%> </li>
-        <% end %>
+        <% @question.answer_options.each do |ao|  %>
+            <li>
+              <%= ao.title %>
+       
+            </li>
 
+         <% end %>
     <% end %>   
 </ol>
