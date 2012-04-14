@@ -4,7 +4,7 @@
 
 
 
-<!-- miksi tämä ei listaa vastausvaihtoehtoja. Debuggerissa @question.answer_options tuottaa nimusta oikeat viittaukset -->
+<!-- miksi tämä ei listaa vastausvaihtoehtoja. Debuggerissa @question.answer_options tuottaa minusta oikeat viittaukset -->
 <ol>
 <p>pelkkä vastausvaihtoehtojen listaaminen toimii</p>
 <% @question.answer_options.each do |ao|  %>
@@ -16,9 +16,8 @@
 
 </ol>
 
-<ol>
-
 <p>Mutta form for kanssa se ei enää onnistu</p>
+<ol>
     <% form_for ([@course, @question ,@question.answers.build])  do |f|%>
         <% @question.answer_options.each do |ao|  %>
             <li>
