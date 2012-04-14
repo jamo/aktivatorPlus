@@ -10,12 +10,12 @@
 <% @question.answer_options.each do |ao|  %>
     <li>
         <%= ao.title %>
-        <%= ao.answers.count %>
     </li>
 
 <% end %>
 
 </ol>
+
 <ol>
 
 <p>Mutta form for kanssa se ei enää onnistu</p>
@@ -23,6 +23,8 @@
         <% @question.answer_options.each do |ao|  %>
             <li>
               <%= ao.title %>
+              <%= radio_button_tag "#{ao.title}", nil %><br />
+
        
             </li>
 
