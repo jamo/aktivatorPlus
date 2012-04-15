@@ -4,29 +4,19 @@
 
 
 
-<!-- miksi tämä ei listaa vastausvaihtoehtoja. Debuggerissa @question.answer_options tuottaa minusta oikeat viittaukset -->
+
 <ol>
-<p>pelkkä vastausvaihtoehtojen listaaminen toimii</p>
-<% @question.answer_options.each do |ao|  %>
-    <li>
-        <%= ao.title %>
-    </li>
-
-<% end %>
-
-</ol>
-
-<p>Mutta form for kanssa se ei enää onnistu</p>
-<ol>
-    <% form_for ([@course, @question ,@question.answers.build])  do |f|%>
+    <%= form_for([@course, @question ,@question.answers.build])  do |f|%>
         <% @question.answer_options.each do |ao|  %>
             <li>
               <%= ao.title %>
-              <%= radio_button_tag "#{ao.title}", nil %><br />
+              <%= radio_button_tag 'answer_option_id', ao.id  %><br />
 
        
             </li>
 
          <% end %>
+         <%= f.submit %>
     <% end %>   
 </ol>
+

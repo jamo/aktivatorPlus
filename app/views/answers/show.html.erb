@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<h1>answers#show</h1>
+
+  <h2>
+  <%= @question.name%>
+  </h2>
+
+<ol>
+<% @question.answer_options.each do |ao|  %>
+    <li>
+        <%= ao.title %>
+        <%= ao.answers.count %>
+    </li>
+
+<% end %>
+</ol>
+
+<%= link_to 'New answer', new_course_question_answer_path(@course.id, @question.id)%>
+
