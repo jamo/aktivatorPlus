@@ -1,23 +1,18 @@
-<p id="notice"><%= notice %></p>
-<h1> questions#show</h1>
 
-  <h2>
-  <%= @question.name%>
+<h1>Course: <%= @course.name%> </h1>
+
+<p id="notice"><%= notice %></p>
+  <h2>Question: <%= @question.name%>
   </h2>
 
 <ol>
 <% @question.answer_options.each do |ao|  %>
     <li>
-        <%= ao.title %>
+        <%= ao.title %>:
         <%= ao.answers.count %>
     </li>
 
 <% end %>
 </ol>
 
-<%= link_to 'New answer', new_course_question_answer_path(@course.id, @question.id)%>
-<!--
-<%= link_to 'New question', new_course_question_path(@course)%>
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
--->
+<%= link_to 'Answer to this question', new_course_question_answer_path(@course.id, @question.id)%>

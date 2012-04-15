@@ -1,10 +1,6 @@
-<h1>answer#new</h1><br/>
 <h1>New Answer </h1>
-<h2> <%="#{@question.name}"%></h2>
-
-
-
-
+<h1><%= "#{@course.name}"%></h1>
+<h2><%="#{@question.name}"%></h2>
 <ol>
     <%= form_for([@course, @question ,@question.answers.build])  do |f|%>
         <% @question.answer_options.each do |ao|  %>
