@@ -44,13 +44,15 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { redirect_to course_questions_path(@course), notice: 'Course was successfully created.' }
         format.json { render json: @course, status: :created, location: @course }
       else
         format.html { render action: "new" }
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
+   # flas.keep
+    #redirect_to course_questions_path(@course)
   end
 
   # PUT /courses/1

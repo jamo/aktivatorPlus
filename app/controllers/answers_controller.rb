@@ -19,6 +19,7 @@ class AnswersController < ApplicationController
     @question = @course.questions.find(params[:question_id])
     @answer = @question.answers.build(:choice => 1, :question_id => @question_id, :course_id => @course_id, :answer_option_id => params[:answer_option_id])
     @answer.save! if @answer
+    redirect_to course_questions_path(@course)
 #    debugger
 #    redirect_to  course_question_path(@course_id, @question_id)
     #unless params[:answer_option1].blank?

@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+TURHA!!!
+
 <p>
   <b>Name:</b>
   <%= @course.name %>
@@ -10,16 +12,3 @@
 <%= link_to 'Back', courses_path %>
 
 <%= link_to 'Questions', course_questions_path(@course)%>
-<h2>Kokeillaan tehdä tähän uuden kysymyksen teko</h2>
-
-<%= form_for([@course, @course.questions.build]) do |f| %>
-    <div class="field">
-    <%= f.label :name%> <br/>
-    <%= f.text_field :name%> <br/>
-    </div>
-    <div class="actions">
-    <%= f.submit %>
-    </div>
-
-
-<% end %>
