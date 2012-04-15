@@ -73,7 +73,6 @@ class QuestionsController < ApplicationController
   #debugger
   end
 
-
   def show
     #tän pitäis näyttää vaan yksi kyssäri
     #debugger
@@ -97,5 +96,6 @@ class QuestionsController < ApplicationController
     @questions = @course.questions
     
   end
-
+  
+ 
 end
