@@ -1,4 +1,6 @@
 AktivatorPlus::Application.routes.draw do
+  resources :users
+
   resources :courses do
     resources :questions do
       resources :answer_options
