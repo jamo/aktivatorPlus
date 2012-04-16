@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  
+  skip_before_filter :authorize, :only => [:show, :index]
   
   def new
     @course = Course.find(params[:course_id])

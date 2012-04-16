@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+   skip_before_filter :authorize, :only => [:index, :show]
   # GET /courses
   # GET /courses.json
   def index

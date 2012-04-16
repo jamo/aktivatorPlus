@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+ skip_before_filter :authorize, :only => [:new, :create]
   
   def new
     #debugger
