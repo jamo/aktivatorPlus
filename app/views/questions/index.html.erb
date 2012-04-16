@@ -1,21 +1,18 @@
 <h1><%= @course.name%></h1>
-<br/>
-<%= link_to 'New Question', new_course_question_path %>
 
-
-<table>
-  <tr>
-    <th><h2>Questions: </h2></th>
-  </tr>
-
-<% @course.questions.each do |question| %>
-  <tr>
-    <td><%= link_to "#{question.name}", course_question_path(@course.id, question) %></td>
-    <td> </td>
-  </tr>
+<% if session[:user_id]%>
+    <br />
+    <%= link_to 'New Question', new_course_question_path %>
 <% end %>
+<table>
+    <tr>
+        <th><h2>Questions: </h2></th>
+    </tr>
+    <% @course.questions.each do |question| %>
+    <tr>
+        <td><%= link_to "#{question.name}", course_question_path(@course.id, question) %></td>
+        <td></td>
+    </tr>
+    <% end %>
 </table>
-
 <br />
-
-

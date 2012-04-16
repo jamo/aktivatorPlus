@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
+   skip_before_filter :authorize, :only => [:index]
   def index
-    #debugger
     @total_courses = Course.count
     @total_questions = Question.count
     @total_answer_options = AnswerOption.count

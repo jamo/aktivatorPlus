@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def show
     
     @user = User.find(params[:id])
-    @admin = @user_administrator
+    debugger
 
 
   end
@@ -42,10 +42,13 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     
-     #if params[:admin].excists?
-        @user = User.new(params[:user], :administrator => true)
-     #else
-     #   @user = User.new(params[:user], :administrator => false)
+     #if params[:admin].blank?
+     #   @user = User.new(params[:user], :administrator => nil)
+     #elsif params[:admin] = true
+     #   debugger
+     #   @user = User.new(params[:user], :administrator => true)
+     # else
+         @user = User.new(params[:user], :administrator => nil)
      # end
 
     respond_to do |format|
