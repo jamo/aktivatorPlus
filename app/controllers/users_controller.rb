@@ -15,12 +15,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def show
+    
     @user = User.find(params[:id])
+    @admin = @user_administrator
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @user }
-    end
+
   end
 
   # GET /users/new
@@ -42,7 +41,12 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
-    @user = User.new(params[:user])
+    
+     #if params[:admin].excists?
+        @user = User.new(params[:user], :administrator => true)
+     #else
+     #   @user = User.new(params[:user], :administrator => false)
+     # end
 
     respond_to do |format|
       if @user.save
