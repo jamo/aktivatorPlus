@@ -53,7 +53,7 @@ class QuestionsController < ApplicationController
     @answer_option19.save! if @answer_option19
     @answer_option20.save! if @answer_option10
     
-    flask.keep
+    flash.keep
     redirect_to course_questions_path(@course)
   end
 
