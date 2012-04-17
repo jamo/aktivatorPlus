@@ -10,4 +10,52 @@
  *
  *= require_self
  *= require_tree .
-*/
+ */
+div.wrapper{
+    width: 60%;
+    margin: auto;
+    float: none;
+    position: relative;
+    max-width: 60%;
+
+}
+div.stuff{
+        background-color: LightGoldenRodYellow;
+        height: auto;
+        padding: 10px;
+        min-height: 300px;
+}
+div.footer{
+    background-color: red;
+    position: relative;
+}
+
+
+div.footer.p {
+    padding: 1em;
+    font-size: 2em;
+}
+div.navi {
+    background-color: lightGrey;
+    display: inline;
+    float: left;
+    width: 140px;
+    margin: 10px;
+    padding: 1em;
+}
+div.footer {
+   position: relative;
+    font-size: 1px;
+}
+div.withOutNavi div.content {
+    padding: 1em;
+    
+}
+div.withNavi div.content {
+    margin-left: 160px;
+    padding: 10px;
+    border-left: 1px solid gray;
+
+    display: inline;
+    position: relative;
+}

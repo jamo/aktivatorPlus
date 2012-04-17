@@ -7,39 +7,53 @@
         <%= csrf_meta_tags %>
     </head>
     <body>
-        <% if session[:user_id]%>
-        <div class="navi">
-            <%= link_to "Admin", admin_path%>
-            <br />
-            <%= link_to "New Course", new_course_path%>
-            <br />
-            <%= link_to "Show Courses", courses_path%>
-            <br />
-            <% if params[:course_id]%>
-            <%= link_to "Edit This Course", edit_course_path(params[:course_id])%>
-            <br />
-            <%= link_to "Show Courses questions", course_questions_path(params[:course_id])%>
-            <br />
-            <%= link_to "New Quesion", new_course_question_path(params[:course_id])%>
-            <br />
-            <%end%>
+        <div class="wrapper">
+            <div class="stuff">
+                <% if session[:user_id]%>
+                <div class="withNavi">
+                    <div class="navi">
+                        <%= link_to "Admin", admin_path%>
+                        <br />
+                        <%= link_to "New Course", new_course_path%>
+                        <br />
+                        <%= link_to "Show Courses", courses_path%>
+                        <br />
+                        <% if params[:course_id]%>
+                        <%= link_to "Edit This Course", edit_course_path(params[:course_id])%>
+                        <br />
+                        <%= link_to "New Quesion", new_course_question_path(params[:course_id])%>
+                        <br />
+                        <%= link_to "Show Courses Questions", course_questions_path(params[:course_id])%>
+                        <br />
+                        <%end%>
 
-            <% if params[:course_id] and params[:id] %>
+                        <% if params[:course_id] and params[:id] %>
 
-            <%= link_to "Answer to this quesion", new_course_question_answer_path(params[:course_id], params[:id])%>
-            <br />
-            <%= link_to "Show Questions Results", course_question_path(params[:course_id], params[:id])%>
-            <br />
-             <%= link_to "Show Questions Comments", course_question_comments_path(params[:course_id], params[:id])%>
-            <br />
-            
-            <%end%>
+                        <%= link_to "Answer to this quesion", new_course_question_answer_path(params[:course_id], params[:id])%>
+                        <br />
+                        <%= link_to "Show Questions Results", course_question_path(params[:course_id], params[:id])%>
+                        <br />
+                        <%= link_to "Show Questions Comments", course_question_comments_path(params[:course_id], params[:id])%>
+                        <br />
+                        <%end%>
 
-            <%= link_to "New User", new_user_path%>
-            <br />
-            <%= button_to "logout",logout_path, :method => :delete %>
-        </div>
-        <%end%>
-        <%= yield %>
+                        <%= link_to "New User", new_user_path%>
+                        <br />
+                        <%= button_to "logout",logout_path, :method => :delete %>
+                    </div>
+                    <% else%>
+                    <div class=withOutNavi>
+                        <%end%>
+                        <div class="content">
+                            <%= yield %>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="footer">
+                        <p>Copyright Jarmo Isotalo</p>
+                        <p><%= Time.now %> </p>
+                    </div>
+            </div>
     </body>
 </html>

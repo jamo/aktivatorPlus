@@ -1,17 +1,15 @@
 <h1><%= @course.name%></h1>
-
-<% if session[:user_id]%>
-    <br />
-    <%= link_to 'New Question', new_course_question_path %>
-<% end %>
 <table>
     <tr>
         <th><h2>Questions: </h2></th>
     </tr>
     <% @course.questions.each do |question| %>
     <tr>
+        <% if session[:user_id]%> 
         <td><%= link_to "#{question.name}", course_question_path(@course.id, question) %></td>
-        <td></td>
+        <% else %> 
+        <td><%= link_to "#{question.name}", new_course_question_answer_path(@course.id, question) %></td>' <td></td>
+        <% end %>
     </tr>
     <% end %>
 </table>
