@@ -41,6 +41,11 @@ div.withNavi div.content {
 }
 div.withOut.Navi div.content {
     padding-left: 1px;
+    background-color: #eee;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    min-height: 275px;
     
 }
 div.footer {
