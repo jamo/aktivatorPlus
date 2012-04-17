@@ -1,12 +1,5 @@
 AktivatorPlus::Application.routes.draw do
 
-  get "comment/index"
-
-  get "comment/view"
-
-  get "comment/edit"
-
-  get "comment/delete"
 
   get 'admin' => 'admin#index'
   controller :sessions do
@@ -24,11 +17,11 @@ AktivatorPlus::Application.routes.draw do
 
   resources :users
 
-  resources :courses do
-    resources :questions do
+  resources :courses, :only => [:index, :new, :edit, :create, :update, :destroy] do
+    resources :questions, :only => [:index, :new, :create, :show]  do
       resources :answer_options
-      resources :answers
-      resources :comments
+      resources :answers, :only => [:create, :new]
+      resources :comments, :only => [:index]
 
     end
   end
