@@ -1,11 +1,21 @@
-<h1>Courses#comments</h1>
-<p>Find me in app/views/courses/comments.html.erb</p>
-<h1>Questions#comments</h1>
-<p>Find me in app/views/questions/comments.html.erb</p>
-
-<% @course.questions do |q|%>
-    <% q.answers do |a|%>
+<h1>Listing all comments for <%="#{@course.name}"%></h1>
+<div class="commentCourse">
+<% @course.questions.each do |q|%>
+    <h2><%= q.name%></h2>
+    <% if q.comments.empty?%>
+        <h3>Kurssilla ei kommentteja</h3>
+     <% else %>
     
-    % end %
+        <% q.comments.each do |c|%>
+        <div class="commentComment">
+            <fieldset>
+            <legend><%= c.created_at%></legend>
+             <p id="poikki"><%= c.body%></p>
+            </fieldset>
+        </div>
+        <% end %>
+    
+    <% end %>
+    </div>
 
 <%end%>

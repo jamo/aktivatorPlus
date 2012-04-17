@@ -1,5 +1,7 @@
 AktivatorPlus::Application.routes.draw do
 
+
+  match "courses/:id/comments" => "courses#comments", :as => :course_comments
   get 'admin' => 'admin#index'
   controller :sessions do
     get 'login' => :new
@@ -16,7 +18,7 @@ AktivatorPlus::Application.routes.draw do
 
   resources :users
 
-  resources :courses, do # :only => [:index, :new, :edit, :create, :update, :destroy, :comments]
+  resources :courses, :only => [:index, :new, :edit, :create, :update, :destroy, :comments] do 
     resources :questions, :only => [:index, :new, :create, :show]  do
       resources :answer_options
       resources :answers, :only => [:create, :new]

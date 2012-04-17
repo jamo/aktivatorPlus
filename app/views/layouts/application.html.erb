@@ -4,6 +4,7 @@
         <title>Jarmon kyselyohjelma</title><!-- ><title>AktivatorPlus</title>-->
         <%= stylesheet_link_tag    "application", :media => "all" %>
         <%= javascript_include_tag "application" %>
+        <%= stylesheet_link_tag "stylesheets/comments.css", :media => "all"%>
         <%= csrf_meta_tags %>
     </head>
     <body id="kaikki">
@@ -16,13 +17,24 @@
                 <br />
                 <%= link_to "Show Courses", courses_path%>
                 <br />
-                <% if params[:course_id]%>
-                <%= link_to "Edit This Course", edit_course_path(params[:course_id])%>
+                <% if params[:controller]=="courses" or params[:course_id]%>
+                <%@courseID = nil%>
+                        <% if params[:controller]=="courses"%>
+                        <% @courseID = params[:id]%>
+                        <% else%>
+                        <% @courseID = params[:course_id]%>
+                        <% end %>
+                
+                <%= link_to "Edit This Course", edit_course_path([@courseID])%>
                 <br />
-                <%= link_to "New Quesion", new_course_question_path(params[:course_id])%>
+                <%= link_to "New Quesion", new_course_question_path([@courseID])%>
                 <br />
-                <%= link_to "Show Courses Questions", course_questions_path(params[:course_id])%>
+                <%= link_to "Show Courses Questions", course_questions_path([@courseID])%>
                 <br />
+                
+                <%= link_to "Show Courses Comments", course_comments_path([@courseID])%>
+                <br />
+
                 <%end%>
 
                 <% if params[:course_id] and params[:id] %>

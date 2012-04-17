@@ -37,7 +37,9 @@ div.withNavi div.content {
     padding-top: 20px;
     padding-bottom: 10px;
     margin-bottom: 20px;
-    min-height: 275px;
+    min-height: 375px;
+    
+    
 }
 div.withOutNavi div.content {
     padding-left: 1px;
@@ -47,6 +49,7 @@ div.withOutNavi div.content {
     margin-bottom: 20px;
     min-height: 275px;
     text-indent: 15px;
+    
     
 }
 div.footer {
