@@ -72,4 +72,8 @@ class CoursesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def comments
+     @course = Course.find(params[:id])   
+  end
 end
