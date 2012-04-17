@@ -1,5 +1,13 @@
 AktivatorPlus::Application.routes.draw do
 
+  get "comment/index"
+
+  get "comment/view"
+
+  get "comment/edit"
+
+  get "comment/delete"
+
   get 'admin' => 'admin#index'
   controller :sessions do
     get 'login' => :new

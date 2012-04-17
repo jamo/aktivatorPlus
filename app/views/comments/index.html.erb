@@ -1,0 +1,8 @@
+<h1><%= "#{@course.name}"  %></h1>
+<h2><%= "#{@question.name}"  %></h2>
+<% @comments.each do |c| %> 
+<div style="border:1px solid black;padding: 2em;width: 600px; background: greenyellow">
+    <p style="width: 600px; color: black"><%= "#{c.body}" %> </p>
+</div>
+<br />
+<% end %> 
