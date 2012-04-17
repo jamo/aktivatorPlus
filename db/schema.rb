@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416135706) do
+ActiveRecord::Schema.define(:version => 20120417103639) do
 
   create_table "answer_options", :force => true do |t|
     t.string   "title"
@@ -38,6 +38,18 @@ ActiveRecord::Schema.define(:version => 20120416135706) do
   add_index "answers", ["answer_option_id"], :name => "index_answers_on_answer_option_id"
   add_index "answers", ["course_id"], :name => "index_answers_on_course_id"
   add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
+
+  create_table "comments", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "question_id"
+    t.integer  "course_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "comments", ["course_id"], :name => "index_comments_on_course_id"
+  add_index "comments", ["question_id"], :name => "index_comments_on_question_id"
 
   create_table "courses", :force => true do |t|
     t.string   "name"

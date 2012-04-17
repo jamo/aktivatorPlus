@@ -7,11 +7,11 @@
             <li>
               <%= ao.title %>
               <%= radio_button_tag 'answer_option_id', ao.id  %><br />
-
-       
             </li>
 
          <% end %>
+         <p>Kommentti</p>
+         <%= text_area_tag 'comment', nil%>
          <%= f.submit %>
     <% end %>   
 </ol>
