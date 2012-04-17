@@ -59,7 +59,8 @@ div.withOutNavi div.content {
 }
 div.withNavi div.content {
     padding: 10px;
-    float: left;
+    /*float: left;*/
+   
     display: inline;
     position: relative;
     height: auto;
