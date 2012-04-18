@@ -3,31 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 div.commentCourse {
     /*background-color: blue;*/
+    text-indent: 10px;
     margin: 20px;
+    border: solid 1px black;
+    background-color: #E0E0E0;
 }
 
-div.commentCourse div.commentComment{
-
+div.commentComment{
+  word-wrap: break-word;
   margin: 10px;
   width: auto;
-  
+  border: dotted 1px black;
+  background-color: #D0D0D0;
 }
-legend {
-  word-wrap: break-word;
-  white-space: normal;
-  color: green;
 
-}
-fieldset {
-  word-wrap: break-word;
-  white-space: normal;
-  max-width: 550px;
-  
-}
-#poikki {
-  word-wrap: break-word;
-  white-space: normal;
-  color: blue;
-  display: block;
-  max-width: 500px;
-}
+
+

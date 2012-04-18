@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
+    debugger
 
     respond_to do |format|
       format.html # index.html.erb

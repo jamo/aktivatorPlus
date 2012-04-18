@@ -11,45 +11,39 @@
         <% if session[:user_id]%>
         <div class="withNavi">
             <div class="navi">
-                <%= link_to "Admin", admin_path%>
-                <br />
-                <%= link_to "New Course", new_course_path%>
-                <br />
-                <%= link_to "Show Courses", courses_path%>
-                <br />
-                <% if params[:controller]=="courses" or params[:course_id]%>
-                <%@courseID = nil%>
-                        <% if params[:controller]=="courses"%>
-                        <% @courseID = params[:id]%>
-                        <% else%>
+                <ul class="naviNoDots"><li><%= link_to "Admin", admin_path%></li>
+                    <br />
+                    <li><%= link_to "New Course", new_course_path%></li>
+                    <br />
+                    <li><%= link_to "Show Courses", courses_path%></li>
+                    <br />
+                    <% if params[:controller]=="courses" and params[:id] or params[:course_id]%>
                         <% @courseID = params[:course_id]%>
-                        <% end %>
-                
-                <%= link_to "Edit This Course", edit_course_path([@courseID])%>
-                <br />
-                <%= link_to "New Quesion", new_course_question_path([@courseID])%>
-                <br />
-                <%= link_to "Show Courses Questions", course_questions_path([@courseID])%>
-                <br />
-                
-                <%= link_to "Show Courses Comments", course_comments_path([@courseID])%>
-                <br />
+                        <% if params[:controller]=="courses"%>
+                                <% @courseID = params[:id]%>
+                            <% else%>
+                                <% @courseID = params[:course_id] unless params[:course_id]== nil%>
+                           <% end %>
+                        <li><%= link_to "Edit This Course", edit_course_path([@courseID])%></li>
+                        <br />
+                        <li><%= link_to "New Quesion", new_course_question_path([@courseID])%></li>
+                        <br />
+                        <li><%= link_to "Show Courses Questions", course_questions_path([@courseID])%></li>
+                        <br />
+                        <li><%= link_to "Show Courses Comments", course_comments_path([@courseID])%></li>
+                         <br />
+                    <%end%>
 
-                <%end%>
-
-                <% if params[:course_id] and params[:id] %>
-
-                <%= link_to "Answer to this quesion", new_course_question_answer_path(params[:course_id], params[:id])%>
-                <br />
-                <%= link_to "Show Questions Results", course_question_path(params[:course_id], params[:id])%>
-                <br />
-                <%= link_to "Show Questions Comments", course_question_comments_path(params[:course_id], params[:id])%>
-                <br />
-                <%end%>
-
-                <%= link_to "New User", new_user_path%>
-                <br />
-                <%= button_to "logout",logout_path, :method => :delete %>
+                    <% if params[:course_id] and params[:id] %></li> <li><%= link_to "Answer to this quesion", new_course_question_answer_path(params[:course_id], params[:id])%></li>
+                    <br />
+                    <li><%= link_to "Show Questions Results", course_question_path(params[:course_id], params[:id])%></li>
+                    <br />
+                    <li><%= link_to "Show Questions Comments", course_question_comments_path(params[:course_id], params[:id])%></li>
+                    <br />
+                    <%end%> <li><%= link_to "New User", new_user_path%></li>
+                    <br />
+                    <br />
+                    <%= button_to "logout",logout_path, :method => :delete %> </ul>
             </div>
             <% else%>
             <div class=withOutNavi>

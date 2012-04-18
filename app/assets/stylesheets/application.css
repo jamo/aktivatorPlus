@@ -15,6 +15,8 @@
 #kaikki {
     background: LightGoldenRodYellow;
 }
+
+
 body {
     margin: 1em auto;
     max-width: 60%;
@@ -23,23 +25,29 @@ body {
 div.navi {
     margin: 25px;
     float: left;
-    width: 150px;
+    width: 170px;
     color: black;
-    background-color: lightgrey;
+    background-color: #D0D0D0;
+    border: solid black 1px;
+    margin-top: 75px;
     min-height: 250px;
     padding: 10px;
     padding-right: 0px;
-    /*padding-bottom: 30000px;*/
+   /* text-indent: -30px;*/
+    
+    
+    
 }
+/*ul.naviNoDots{
+    list-style-image: none;
+    list-style: none;
+}*/
 div.withNavi div.content {
     padding-left: 200px;
     background-color: #eee;
     padding-top: 20px;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    min-height: 375px;
-    
-    
+    padding-bottom: 20px;
+    min-height: 700px;
 }
 div.withOutNavi div.content {
     padding-left: 1px;
@@ -49,8 +57,6 @@ div.withOutNavi div.content {
     margin-bottom: 20px;
     min-height: 275px;
     text-indent: 15px;
-    
-    
 }
 div.footer {
     /*margin: 1em;*/
