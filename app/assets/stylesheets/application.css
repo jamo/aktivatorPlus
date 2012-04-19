@@ -44,7 +44,7 @@ div.navi {
 }*/
 div.withNavi div.content {
     padding-left: 200px;
-    background-color: #eee;
+    background-color: #efefef/*#eee*/;
     padding-top: 20px;
     padding-bottom: 20px;
     min-height: 700px;
