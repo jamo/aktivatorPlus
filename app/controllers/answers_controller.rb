@@ -23,7 +23,7 @@ class AnswersController < ApplicationController
     @comment =  @question.comments.build(:course_id => params[:course_id], :body => params[:comment])  unless params[:comment].blank?
     @comment.save! if @comment
     #debugger
-    redirect_to course_questions_path(@course)
+    redirect_to course_question_path(@course, @question)
 #    debugger
 #    redirect_to  course_question_path(@course_id, @question_id)
     #unless params[:answer_option1].blank?
