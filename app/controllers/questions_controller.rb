@@ -68,9 +68,7 @@ class QuestionsController < ApplicationController
         kysymykset.push ao.title      
         vastausTulokset.push ao.answers.count
     end
-    #debugger
-    @legend = ['Matt_fu', 'Rob_fu']
-    @asd = Gchart.pie_3d(:title => @question.name, :labels => kysymykset, :data => vastausTulokset, :size => "500x250", :bg => 'efefef')
+    @asd = Gchart.pie_3d(:title => @question.name, :labels => kysymykset, :data => vastausTulokset, :size => "500x250", :bg => {:color => 'efefef'})
 
   end
   
