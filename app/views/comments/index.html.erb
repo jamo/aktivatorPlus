@@ -1,3 +1,12 @@
+<% if flash[:warning] or flash[:notice] %>
+  <div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+    <%= flash[:warning] || flash[:notice] %>
+  </div>
+  <script type="text/javascript">
+    setTimeout("new Effect.Fade('notice');", 15000)
+  </script>
+<% end %>
+
 <h1><%= "#{@course.name}"  %></h1>
 <h2><%= "#{@question.name}"  %></h2>
 <% if @comments.empty?%> <h3>Ei kommentteja</h3>

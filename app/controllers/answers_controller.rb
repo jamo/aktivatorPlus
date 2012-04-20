@@ -3,8 +3,12 @@ class AnswersController < ApplicationController
   
   def new
     #debugger
+   
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:question_id])
+    if @question.active != true
+      refirect_to course_question_path(@course, @question), :alert => "This question is not active!"
+    end
     #miltei turha?
     @answer = @question.answers.new(:course_id => params[:course_id], :question_id => params[:question_id])
     #debugger

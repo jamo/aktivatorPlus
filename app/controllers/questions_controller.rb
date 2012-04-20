@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   def create
     @course = Course.find(params[:course_id])
     
-    @question = @course.questions.create(params[:question])
+    @question = @course.questions.create(params[:question], :active => false)
 
     @answer_option1 = @question.answer_options.build(:choice => 1, :title => params[:answer_option1]) unless params[:answer_option1].blank?
     @answer_option2 = @question.answer_options.build(:choice => 2, :title => params[:answer_option2]) unless params[:answer_option2].blank?
@@ -61,7 +61,7 @@ class QuestionsController < ApplicationController
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:id])
     
-    debugger
+    
     vastausTulokset = Array.new
     kysymykset = Array.new
     @question.answer_options.each do |ao| 
@@ -69,27 +69,21 @@ class QuestionsController < ApplicationController
         vastausTulokset.push ao.answers.count
     end
     @asd = Gchart.pie_3d(:title => @question.name, :labels => kysymykset, :data => vastausTulokset, :size => "500x250", :bg => {:color => 'efefef'})
-
+  
   end
   
-  def edit
+  def activate
+    session[:return_to] = request.referer
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:id])
-    @question.update_attribute('active', 'true')
-
-  end
-  
-  def update
-    @course = Course.find(params[:id])
-    @question = @course.questions.find(params[:id])
-    if params[:activate]
-      @question.update_attribute('active', 'true')
+    if params[:activate] == "true"
+      @question.update_attribute('active', true)
+      redirect_to session[:return_to], :notice => "Question was successfully activated"
     else
-      @question.update_attribute('active', 'false')
+      @question.update_attribute('active', false)
+      redirect_to session[:return_to], :notice => "Question was succesfully deactivated"
     end
-      #@course.update_attributes(params[:course])
-
-
+    
   end
 
 

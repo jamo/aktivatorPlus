@@ -1,6 +1,7 @@
 <h1>New Answer </h1>
 <h1><%= "#{@course.name}"%></h1>
 <h2><%="#{@question.name}"%></h2>
+<% if (@question.active == true) %>
 <ol>
     <%= form_for([@course, @question ,@question.answers.build])  do |f|%>
         <% @question.answer_options.each do |ao|  %>
@@ -15,4 +16,7 @@
          <%= f.submit %>
     <% end %>   
 </ol>
+<% else %>
+    <h2 style=" color: red;">Kysymykseen ei voi vastata</h2>
+<% end %>
 
