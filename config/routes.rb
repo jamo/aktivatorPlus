@@ -19,7 +19,7 @@ AktivatorPlus::Application.routes.draw do
   resources :users
 
   resources :courses, :only => [:index, :new, :edit, :create, :update, :destroy, :comments] do 
-    resources :questions, :only => [:index, :new, :create, :show]  do
+    resources :questions, :only => [:index, :new, :create, :show, :edit]  do
       resources :answer_options
       resources :answers, :only => [:create, :new]
       resources :comments, :only => [:index]

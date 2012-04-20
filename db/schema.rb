@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417103639) do
+ActiveRecord::Schema.define(:version => 20120420112923) do
 
   create_table "answer_options", :force => true do |t|
     t.string   "title"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20120417103639) do
     t.integer  "course_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "active"
   end
 
   add_index "questions", ["course_id"], :name => "index_questions_on_course_id"

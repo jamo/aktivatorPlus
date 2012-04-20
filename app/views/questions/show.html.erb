@@ -4,6 +4,9 @@
 <p id="notice"><%= notice %></p>
   <h2>Question: <%= @question.name%>
   </h2>
+<% if @question.active%>
+on 
+<% end %>
 
 <ol>
 <% @question.answer_options.each do |ao|  %>

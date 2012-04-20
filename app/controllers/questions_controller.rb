@@ -61,7 +61,7 @@ class QuestionsController < ApplicationController
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:id])
     
-    ##
+    debugger
     vastausTulokset = Array.new
     kysymykset = Array.new
     @question.answer_options.each do |ao| 
@@ -74,8 +74,24 @@ class QuestionsController < ApplicationController
   
   def edit
     @course = Course.find(params[:course_id])
-    
+    @question = @course.questions.find(params[:id])
+    @question.update_attribute('active', 'true')
+
   end
+  
+  def update
+    @course = Course.find(params[:id])
+    @question = @course.questions.find(params[:id])
+    if params[:activate]
+      @question.update_attribute('active', 'true')
+    else
+      @question.update_attribute('active', 'false')
+    end
+      #@course.update_attributes(params[:course])
+
+
+  end
+
 
   def index
     @course = Course.find(params[:course_id])
