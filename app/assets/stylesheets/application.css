@@ -29,7 +29,7 @@ div.navi {
     color: black;
     background-color: #D0D0D0;
     border: solid black 1px;
-    margin-top: 75px;
+    margin-top: 35px;
     min-height: 250px;
     padding: 10px;
     padding-right: 0px;
@@ -51,17 +51,25 @@ div.withNavi div.content {
     
 }
 div.withOutNavi div.content {
+    background-color: #efefef;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 1px;
-    background-color: #eee;
     padding-top: 20px;
     padding-bottom: 10px;
-    margin-bottom: 20px;
     min-height: 275px;
-    text-indent: 15px;
+    /*text-indent: 15px;
+   text-align: center;*/
 }
 div.footer {
     /*margin: 1em;*/
+    font-size: 1px;
     border-top: solid 2px gray;
     background-color: #eee;
     padding: 1em;
+}
+
+p.footer {
+    font-size: 10em;
+    text-indent: 20px;
 }
