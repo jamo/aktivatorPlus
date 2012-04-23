@@ -3,30 +3,26 @@
 <table>
   <tr>
     <th>Name</th>
-  
-  <th></th>
     <th></th>
-  <th></th>
+    <th></th>
+    <th></th>
   </tr>
-  <% if @user.administrator == true %>
-  olen admin
-  <% end %>
-  
-  <% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
-    <td><%= link_to 'Show', user %></td>
-    <% if user.id == @user.id or @user.administrator == true  %>
-       <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <% end %>
 
-     <% if @user.administrator == true %>
-  <td><%= link_to 'destroy', usrerPOISTO_path </td>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= link_to 'Show', user %></td>
+      <% if user.id == @user.id or @user.administrator == true  %>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      <% end %>
+
+      <% if @user.administrator? %>
+        <td><%= link_to 'Delete', user, confirm: 'Are you sure', method: :delete%> </td>
+      <% end %>
+    </tr>
   <% end %>
-  </tr>
-    <% end %>
 </table>
-  
-  <br />
+
+<br />
 
 <%= link_to 'New User', new_user_path %>
