@@ -90,8 +90,13 @@ class QuestionsController < ApplicationController
   def index
     @course = Course.find(params[:course_id])
     
-    @questions = @course.questions
-    
+    if session[:user_id]
+      @questions = @course.questions
+    else
+      #debugger
+      @questions =  @course.questions.find(:all,:conditions => { :active => true})
+
+    end
   end
   
  

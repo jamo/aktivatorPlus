@@ -1,23 +1,15 @@
 class AnswersController < ApplicationController
  skip_before_filter :authorize, :only => [:new, :create]
-  
+
   def new
-    #debugger
-   
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:question_id])
     if @question.active != true
       redirect_to course_question_path(@course, @question), :alert => "This question is not active!"
     end
-    #miltei turha?
     @answer = @question.answers.new(:course_id => params[:course_id], :question_id => params[:question_id])
-    #debugger
-
-
-    # <li><%= q.title %> : <%= radio_button_tag 'answer_option_id', q.choice%> </li>
-    # vanha answers#new lista
   end
-  
+
   def create
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:question_id])
@@ -27,6 +19,6 @@ class AnswersController < ApplicationController
     @comment.save! if @comment
     redirect_to course_question_path(@course, @question)
   end
-  
-  
+
+
 end
