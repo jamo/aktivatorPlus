@@ -14,7 +14,10 @@
 
 ** Rajaukset
  Mahdolliset rajaukset koskien määrittelyn, suunnittelun ja toteutuksen laajuutta.
- Kaikissa, joissa postgresql tietokanta ja rails:ille sopiva ympäristö olemassa. ruby 1.9.2.138 Rails 3.2.2
+*** Deploy 
+    Kaikkialla, missä postgresql tietokanta, ruby 1.9.2-p290 ja rails 3.2.2
+*** Develpoment
+    Kaikkialla, missä sqlite3 asennettuna, ruby 1.9.2-p290 ja rails 3.2.2
 
 ** Toteutusympäristö
 ** Missä ympäristössä työ toteutetaan. 

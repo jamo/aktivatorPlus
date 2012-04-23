@@ -1,4 +1,6 @@
 source 'http://rubygems.org'
+##Asenna paikallisesti
+#bundle install --without production 
 
 gem 'rails', '3.2.2'
 gem 'googlecharts'
