@@ -42,13 +42,22 @@ div.navi {
     list-style-image: none;
     list-style: none;
 }*/
+div.with {
+    background-color: #efefef;
+    
+    
+}
+
+
 div.withNavi div.content {
-    padding-left: 200px;
+    padding-left: 240px;
     background-color: #efefef/*#eee*/;
     padding-top: 20px;
     padding-bottom: 20px;
     min-height: 700px;
-    
+/*    margin-left: 30px;*/
+
+
 }
 div.withOutNavi div.content {
     background-color: #efefef;

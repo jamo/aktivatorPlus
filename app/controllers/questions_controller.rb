@@ -1,14 +1,14 @@
 class QuestionsController < ApplicationController
   skip_before_filter :authorize, :only => [:show, :index]
-  
+
   def new
     @course = Course.find(params[:course_id])
     @question = @course.questions.new
   end
-  
+
   def create
     @course = Course.find(params[:course_id])
-    
+
     @question = @course.questions.create(params[:question], :active => false)
 
     @answer_option1 = @question.answer_options.build(:choice => 1, :title => params[:answer_option1]) unless params[:answer_option1].blank?
@@ -52,7 +52,7 @@ class QuestionsController < ApplicationController
     @answer_option18.save! if @answer_option18
     @answer_option19.save! if @answer_option19
     @answer_option20.save! if @answer_option10
-    
+
     flash.keep
     redirect_to course_questions_path(@course)
   end
@@ -60,18 +60,18 @@ class QuestionsController < ApplicationController
   def show
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:id])
-    
-    
-    vastausTulokset = Array.new
-    kysymykset = Array.new
-    @question.answer_options.each do |ao| 
-        kysymykset.push ao.title      
-        vastausTulokset.push ao.answers.count
+
+
+    @vastausTulokset = Array.new
+    @kysymykset = Array.new
+    @question.answer_options.each do |ao|
+        @kysymykset.push ao.title
+        @vastausTulokset.push ao.answers.count
     end
-    @asd = Gchart.pie_3d(:title => @question.name, :labels => kysymykset, :data => vastausTulokset, :size => "500x250", :bg => {:color => 'efefef'})
-  
+    @asd = Gchart.pie_3d(:title => @question.name, :labels => @kysymykset, :data => @vastausTulokset, :size => "500x250", :bg => {:color => 'efefef'})
+
   end
-  
+
   def activate
     session[:return_to] = request.referer
     @course = Course.find(params[:course_id])
@@ -83,21 +83,20 @@ class QuestionsController < ApplicationController
       @question.update_attribute('active', false)
       redirect_to session[:return_to], :notice => "Question was succesfully deactivated"
     end
-    
+
   end
 
 
   def index
     @course = Course.find(params[:course_id])
-    
+
     if session[:user_id]
       @questions = @course.questions
     else
-      #debugger
       @questions =  @course.questions.find(:all,:conditions => { :active => true})
 
     end
   end
-  
- 
+
+
 end

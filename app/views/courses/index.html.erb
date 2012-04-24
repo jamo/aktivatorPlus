@@ -22,16 +22,10 @@
     <td><%= link_to "#{course.name}", course_questions_path(course) %></td>
     <% if session[:user_id]%>
         <td><%= link_to 'Rename', edit_course_path(course) %></td>
-        <td><%= link_to 'Delete', course, confirm: 'Are you sure', method: :delete%> </td>
+    <% end %>
+    <% if User.find(session[:user_id]).administrator? %> 
+      <td><%= link_to 'Delete', course, confirm: 'Are you sure', method: :delete%> </td>
     <% end %>
   </tr>
 <% end %>
 </table>
-<!-- >
-<br />
-<% if session[:user_id]%>
-    <%= link_to 'New Course', new_course_path %>
-<% end %>
-Tota tossa ei tarvita
-
--->
