@@ -1,4 +1,3 @@
-
 <div class="navi">
   <ul class="naviNoDots">
     <li><%= link_to "Admin", admin_path%></li>
@@ -23,17 +22,17 @@
       <li><%= link_to "Show Courses Comments", course_comments_path([@courseID])%></li>
       <br />
       <%end%>
-      
+
       <% if params[:course_id] and params[:id] %>
-	<li><%= link_to "Answer to this quesion", new_course_question_answer_path(params[:course_id], params[:id])%></li>
+        <li><%= link_to "Answer to this quesion", new_course_question_answer_path(params[:course_id], params[:id])%></li>
         <br />
-	<li><%= link_to "Show Questions Results", course_question_path(params[:course_id], params[:id])%></li>
+        <li><%= link_to "Show Questions Results", course_question_path(params[:course_id], params[:id])%></li>
         <br />
-	<li><%= link_to "Show Questions Comments", course_question_comments_path(params[:course_id], params[:id])%></li>
+        <li><%= link_to "Show Questions Comments", course_question_comments_path(params[:course_id], params[:id])%></li>
         <br />
         <%end%> <li><%= link_to "New User", new_user_path%></li>
         <br />
         <br />
         <%= button_to "logout",logout_path, :method => :delete %> </ul>
 </div>
- 
+

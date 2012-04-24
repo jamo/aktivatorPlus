@@ -77,8 +77,6 @@ class CoursesController < ApplicationController
   end
 
   def comments
-
      @course = Course.find(params[:id])
-
   end
 end

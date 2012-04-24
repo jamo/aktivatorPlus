@@ -2,8 +2,8 @@
 
 <% if params[:user_id] == @user.id or @user.administrator? %>
   <%= render 'form' %>
-  <% else %>
-    <h2 style=" color: red;">Ei oikeutta muuttaa toisen tietoja!</h2>
+<% else %>
+  <h2 style=" color: red;">Ei oikeutta muuttaa toisen tietoja!</h2>
 <% end %>
 
 <%= link_to 'Show', @user %> |

@@ -23,10 +23,8 @@
           <% end %>
         </td>
       <% else %>
-
         <td><%= link_to "#{question.name}", new_course_question_answer_path(@course.id, question) %></td>
       <% end %>
     </tr>
-    <% end %>
+  <% end %>
 </table>
-<br />

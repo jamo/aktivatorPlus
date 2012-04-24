@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
    skip_before_filter :authorize, :only => [:new, :create, :index]
+
   # GET /users
   # GET /users.xml
   def index
@@ -36,11 +37,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
-         @user = User.new(params[:user], :administrator => nil)
+    @user = User.new(params[:user], :administrator => nil)
     respond_to do |format|
       if @user.save
         format.html { redirect_to(users_url,
-          :notice => "User #{@user.name } was successfully created.") }
+                                  :notice => "User #{@user.name } was successfully created.") }
         format.xml  { render :xml => @user,
           :status => :created, :location => @user }
       else
@@ -59,7 +60,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to(users_url,
-          :notice => "User #{@user.name } was successfully updated.") }
+                                  :notice => "User #{@user.name } was successfully updated.") }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -74,7 +75,6 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-
     respond_to do |format|
       format.html { redirect_to(users_url) }
       format.xml  { head :ok }
@@ -91,6 +91,6 @@ class UsersController < ApplicationController
       @question.update_attribute('admin', false)
       redirect_to session[:return_to], :notice => "User is no longer admin"
     end
-
   end
+
 end

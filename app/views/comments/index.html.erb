@@ -9,18 +9,15 @@
 
 <h1><%= "#{@course.name}"  %></h1>
 <h2><%= "#{@question.name}"  %></h2>
-<% if @comments.empty?%> 
+<% if @comments.empty?%>
   <h3>Ei kommentteja</h3>
 <% end %>
-
-
-
 
 <% @comments.each do |c| %>
   <div class="commentComment">
     <p ><%= c.created_at%>
     <p id="poikki"><%= c.body%></p>
-        </p>
+    </p>
   </div>
   <br />
-<% end %> 
+<% end %>

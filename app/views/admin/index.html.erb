@@ -8,22 +8,16 @@
 <% end %>
 
 <% if session[:user_id]%> <h1>Welcome</h1>
-It's <%= Time.now %>
-<br/>
-We have <%= pluralize(@total_courses, "course") %>.
-<br/>
-We have <%= pluralize(@total_questions, "question") %>.
-<br/>
-We have <%= pluralize(@total_answer_options, "answer option") %>.
-<br/>
-We have <%= pluralize(@total_answers, "answer") %>.
-<br/>
-<% else %> <p><font color="red" size="+5">Access denied</font></p>
-<%end%> 
-<br />
-Remote host:
-<%= request.env['REMOTE_HOST']%><br />
-Remote addr:
-<%= request.env['REMOTE_ADDR']%><br />
-User agent:
-<%= request.env['HTTP_USER_AGENT']%> <br />
+  It's <%= Time.now %>
+  <br/>
+  We have <%= pluralize(@total_courses, "course") %>.
+  <br/>
+  We have <%= pluralize(@total_questions, "question") %>.
+  <br/>
+  We have <%= pluralize(@total_answer_options, "answer option") %>.
+  <br/>
+  We have <%= pluralize(@total_answers, "answer") %>.
+  <br/>
+<% else %>
+  <p><font color="red" size="+5">Access denied</font></p>
+<% end %>

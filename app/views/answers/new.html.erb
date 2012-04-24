@@ -2,21 +2,20 @@
 <h1><%= "#{@course.name}"%></h1>
 <h2><%="#{@question.name}"%></h2>
 <% if (@question.active == true) %>
-<ol>
+  <ol>
     <%= form_for([@course, @question ,@question.answers.build])  do |f|%>
-        <% @question.answer_options.each do |ao|  %>
-            <li>
-              <%= ao.title %>
-              <%= radio_button_tag 'answer_option_id', ao.id  %><br />
-            </li>
-
-         <% end %>
-         <p>Kommentti</p>
-         <%= text_area_tag 'comment', nil%>
-         <%= f.submit 'Answer' %>
-    <% end %>   
-</ol>
+      <% @question.answer_options.each do |ao|  %>
+        <li>
+          <%= ao.title %>
+          <%= radio_button_tag 'answer_option_id', ao.id  %><br />
+        </li>
+      <% end %>
+      <p>Kommentti</p>
+      <%= text_area_tag 'comment', nil%>
+      <%= f.submit 'Answer' %>
+    <% end %>
+  </ol>
 <% else %>
-    <h2 style=" color: red;">Kysymykseen ei voi vastata</h2>
+  <h2 style=" color: red;">Kysymykseen ei voi vastata</h2>
 <% end %>
 
