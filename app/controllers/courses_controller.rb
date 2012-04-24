@@ -4,6 +4,10 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
+    @admin = false
+    @admin = User.find(session[:user_id]).administrator? unless session[:user_id] == nil
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
@@ -71,10 +75,10 @@ class CoursesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def comments
-    
+
      @course = Course.find(params[:id])
-        
+
   end
 end

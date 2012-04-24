@@ -17,15 +17,16 @@
     <th></th>
   </tr>
 
-<% @courses.each do |course| %>
-  <tr>
-    <td><%= link_to "#{course.name}", course_questions_path(course) %></td>
-    <% if session[:user_id]%>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= link_to "#{course.name}", course_questions_path(course) %></td>
+      <% if session[:user_id] %>
         <td><%= link_to 'Rename', edit_course_path(course) %></td>
-    <% end %>
-   <!-- <%# if User.find(session[:user_id]).administrator? %>
-      <td><%= link_to 'Delete', course, confirm: 'Are you sure', method: :delete%> </td>
-    <%# end %>-->
-  </tr>
-<% end %>
+      <% end %>
+
+      <% if @admin %>
+        <td><%= link_to 'Delete', course, confirm: 'Are you sure', method: :delete %> </td>
+      <% end %>
+    </tr>
+  <% end %>
 </table>
