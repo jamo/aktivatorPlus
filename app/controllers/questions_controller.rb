@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
       @kysymykset.push ao.title
       @vastausTulokset.push ao.answers.count
     end
-    @asd = Gchart.pie_3d(:title => @question.name, :labels => @kysymykset, :data => @vastausTulokset, :size => "500x250", :bg => {:color => 'efefef'})
+    @chart = Gchart.pie_3d(:title => @question.name, :labels => @kysymykset, :data => @vastausTulokset, :size => "500x250", :bg => {:color => 'efefef'})
     @comments =    Comment.find_all_by_question_id(@question.id)
   end
 
