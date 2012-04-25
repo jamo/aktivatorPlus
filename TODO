@@ -1,7 +1,7 @@
 * TODO-list
 
 ** Tärkeät
-*** TODO Adminille mahdollisuus tehdä toisesta käyttäjästä admin
+*** DONE Adminille mahdollisuus tehdä toisesta käyttäjästä admin
 *** DONE EI voi muuttaa kaverin salasanaa
 *** DONE Comments#index kuntoon
 *** DONE kyselyn tuoksen näkyviin kommenttien kanssa samalle sivulle
