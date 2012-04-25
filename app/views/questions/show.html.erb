@@ -27,15 +27,16 @@
 <br />
 <%= image_tag(@chart)  %>
 
-
-<% if @comments.empty?%>
-  <h3>Ei kommentteja</h3>
-<% end %>
-<% @comments.each do |c| %>
-  <div class="commentComment">
-    <p ><%= c.created_at%>
-    <p id="poikki"><%= c.body%></p>
-    </p>
-  </div>
-  <br />
+<% if @admin %>
+  <% if @comments.empty?%>
+    <h3>Ei kommentteja</h3>
+  <% end %>
+  <% @comments.each do |c| %>
+    <div class="commentComment">
+      <p ><%= c.created_at%>
+      <p id="poikki"><%= c.body%></p>
+      </p>
+    </div>
+    <br />
+  <% end %>
 <% end %>
