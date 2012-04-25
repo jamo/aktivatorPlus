@@ -34,9 +34,9 @@ div.navi {
     padding: 10px;
     padding-right: 0px;
    /* text-indent: -30px;*/
-    
-    
-    
+
+
+
 }
 /*ul.naviNoDots{
     list-style-image: none;
@@ -44,8 +44,8 @@ div.navi {
 }*/
 div.with {
     background-color: #efefef;
-    
-    
+
+
 }
 
 
@@ -67,7 +67,8 @@ div.withOutNavi div.content {
     padding-top: 20px;
     padding-bottom: 10px;
     min-height: 275px;
-    /*text-indent: 15px;
+    text-indent: 15px;
+/*text-indent: 15px;
    text-align: center;*/
 }
 div.footer {

@@ -1,21 +1,23 @@
-<h1>New Answer </h1>
+<h1>Answer</h1>
 <h1><%= "#{@course.name}"%></h1>
 <h2><%="#{@question.name}"%></h2>
-<% if (@question.active == true) %>
-  <ol>
+<% if (@question.active?) %>
+  <ul>
     <%= form_for([@course, @question ,@question.answers.build])  do |f|%>
       <% @question.answer_options.each do |ao|  %>
         <li>
+          <%= radio_button_tag 'answer_option_id', ao.id  %>
           <%= ao.title %>
-          <%= radio_button_tag 'answer_option_id', ao.id  %><br />
+          <br />
         </li>
       <% end %>
-      <p>Kommentti</p>
-      <%= text_area_tag 'comment', nil%>
-      <%= f.submit 'Answer' %>
+      <p>Comment</p>
+      <%= text_area_tag 'comment', nil,  :rows => 4, :cols => 50%>
+      <br />
+      <%= f.submit 'Submit' %>
     <% end %>
-  </ol>
+  </ul>
 <% else %>
-  <h2 style=" color: red;">Kysymykseen ei voi vastata</h2>
+  <h2 style="color: red;">This Answer Is Not Active</h2>
 <% end %>
 

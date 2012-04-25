@@ -2,11 +2,12 @@
 <p id="notice"><%= notice %></p>
 <h2>Question: <%= @question.name%>
 </h2>
+
 <% if session[:user_id]%>
   <% if @question.active?%>
-    <%= button_to "Deactivate",user_to_admin_path(@user, :activate => false) , :method => :makeAdmin %>
+    <%= button_to "Deactivate",course_question_activate_path(@course, @question, :activate => false) , :method => :activate %>
   <% else %>
-    <%= button_to "Activate",user_to_admin_path(@user, :activate => true) , :method => :makeAdmin %>
+    <%= button_to "Activate",course_question_activate_path(@course, @question, :activate => true) , :method => :activate %>
   <% end %>
 <% end %>
 
@@ -26,6 +27,8 @@
 <br />
 <br />
 <%= image_tag(@chart)  %>
+<br />
+<%= link_to 'Return back', courses_path %>
 
 <% if @admin %>
   <% if @comments.empty?%>
