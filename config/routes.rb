@@ -1,6 +1,6 @@
 AktivatorPlus::Application.routes.draw do
 
-
+  match "users/:id/makeAdmin" => "users#makeAdmin", :as => :user_to_admin
   match "courses/:id/comments" => "courses#comments", :as => :course_comments
   match "courses/:course_id/questions/:id/activate" => "questions#activate", :as => :course_question_activate
   get 'admin' => 'admin#index'
@@ -19,7 +19,7 @@ AktivatorPlus::Application.routes.draw do
 
   resources :users
 
-  resources :courses, :only => [:index, :new, :edit, :create, :update, :destroy, :comments] do 
+  resources :courses, :only => [:index, :new, :edit, :create, :update, :destroy, :comments] do
     resources :questions, :only => [:index, :new, :create, :show, :activate]  do
       resources :answer_options
       resources :answers, :only => [:create, :new]

@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <b>Name:</b>
   <%= @user.name %>
 </p>
 
+<% if @admin %>
+  <% if @user.administrator?%>
+    <%= button_to "Make to normal user", user_to_admin_path(@user, :admin => false) , :method => :makeAdmin %>
+  <% else %>
+    <%= button_to "Make administrator", user_to_admin_path(@user, :admin => true) , :method => :makeAdmin %>
+  <% end %>
+<% end %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

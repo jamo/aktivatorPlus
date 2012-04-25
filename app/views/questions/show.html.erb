@@ -4,9 +4,9 @@
 </h2>
 <% if session[:user_id]%>
   <% if @question.active?%>
-    <%= button_to "Deactivate",course_question_activate_path(@course, @question, :activate => false) , :method => :activate %>
+    <%= button_to "Deactivate",user_to_admin_path(@user, :activate => false) , :method => :makeAdmin %>
   <% else %>
-    <%= button_to "Activate",course_question_activate_path(@course, @question, :activate => true) , :method => :activate %>
+    <%= button_to "Activate",user_to_admin_path(@user, :activate => true) , :method => :makeAdmin %>
   <% end %>
 <% end %>
 

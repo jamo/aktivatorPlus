@@ -17,6 +17,8 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
+    @admin = false
+    @admin = User.find(session[:user_id]).administrator? unless session[:user_id] == nil
   end
 
   # GET /users/new
@@ -84,11 +86,12 @@ class UsersController < ApplicationController
   def makeAdmin
     session[:return_to] = request.referer
     @user = User.find(params[:id])
+    debugger
     if params[:admin] == "true"
-      @question.update_attribute('admin', true)
+      @user.update_attribute('administrator', true)
       redirect_to session[:return_to], :notice => "User is now admin"
     else
-      @question.update_attribute('admin', false)
+      @user.update_attribute('administrator', false)
       redirect_to session[:return_to], :notice => "User is no longer admin"
     end
   end
