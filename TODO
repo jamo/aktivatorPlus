@@ -1,5 +1,5 @@
 * TODO-list
-  
+
 ** Tärkeät
 *** DONE Adminille mahdollisuus tehdä toisesta käyttäjästä admin
 *** DONE EI voi muuttaa kaverin salasanaa
@@ -10,19 +10,19 @@
    nämä eivät ole määrittelyjä, jotka ajatellaan kuuuvan tehtävään, vaan jatkokehitys ajatuksia!!!
 *** TODO Kommenttien näyttäminen yhteen partitiaaliin
 
+*** TODO Yleisotsikko kaikille sivuille HEADER?
 
 ** Kommentteja
+*** DONE Answer#new new answer teksti pois
 *** TODO Syöttökenttien linjaus
-*** TODO Answer#new new answer teksti pois
-*** TODO question#new teksti New question => New Question
-*** TODO question#new Kysymys ja vstausvaihtoehto tekstit englanniksi
-*** TODO question#new Create question => save
-*** TODO Users#show ei edit linkkiä, jos ei oikeutta muokata ######### Ei voi muokata eses itseään
-*** TODO Users#new pois linkki New User, on jo navissa
-*** TODO Yleisotsikko kaikille sivuille HEADER?
+*** DONE question#new teksti New question => New Question
+*** DONE question#new Kysymys ja vstausvaihtoehto tekstit englanniksi
+*** DONE question#new Create question => save
+*** DONE Users#show ei edit linkkiä, jos ei oikeutta muokata ######### Ei voi muokata eses itseään
+*** DONE Users#new pois linkki New User, on jo navissa
 *** TODO Back painikkeet pois
-*** TODO Course#new tekstiksi Save Create Course tilalle
+*** DONE Course#new tekstiksi Save Create Course tilalle
 
-*** TODO Questions#new tallenna tekstiksi
+*** DONE Questions#new tallenna tekstiksi
 
-    
+
