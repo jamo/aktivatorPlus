@@ -6,19 +6,6 @@
     setTimeout("new Effect.Fade('notice');", 15000)
   </script>
 <% end %>
+<h2>Update course</h2>
+<%= render 'form' %>
 
-<h1>Editing course</h1>
-
-<%= form_for([@course, @course.questions.build]) do |f| %>
-  <div class="field">
-    Kysymys:
-    <%= f.text_field :name %><br/>
-    <br/>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Show', @course %> |
-<%= link_to 'Back', courses_path %>

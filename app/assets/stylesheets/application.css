@@ -33,10 +33,6 @@ div.navi {
     min-height: 250px;
     padding: 10px;
     padding-right: 0px;
-   /* text-indent: -30px;*/
-
-
-
 }
 /*ul.naviNoDots{
     list-style-image: none;
@@ -44,8 +40,6 @@ div.navi {
 }*/
 div.with {
     background-color: #efefef;
-
-
 }
 
 
@@ -82,4 +76,16 @@ div.footer {
 p.footer {
     font-size: 10em;
     text-indent: 20px;
+}
+
+div.fields{
+
+
+    margin-right: 0.5em;
+
+}
+
+input.inputti{
+    margin-left: 20px;
+    display: block;
 }

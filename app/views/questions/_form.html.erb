@@ -1,12 +1,12 @@
 <%= form_for([@course, @course.questions.build]) do |f| %>
   <div class="field">
-    Kysymys:
-    <%= f.text_field :name %><br/>
+    <%= 'Question:' %>
+    <%= f.text_field :name,  :class =>'inputti' %><br/>
 
     <% @number_of_answer_options = 20 %>
     <% for i in (1..@number_of_answer_options) %>
-      <%= "Vastausvaihtoehto "+i.to_s %>
-      <%= text_field_tag ('answer_option'+i.to_s).to_sym, nil %> <br />
+      <%= "Answer option "+i.to_s %>
+      <%= text_field_tag ('answer_option'+i.to_s).to_sym, nil, :class =>'inputti' %> <br />
     <% end %>
 
   </div>
