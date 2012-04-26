@@ -1,9 +1,12 @@
 source 'http://rubygems.org'
 ##Asenna paikallisesti
-#bundle install --without production 
+#bundle install --without production
 
 gem 'rails', '3.2.2'
 gem 'googlecharts'
+#simple-navigation
+gem 'simple-navigation'
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
