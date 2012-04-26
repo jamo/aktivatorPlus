@@ -69,12 +69,12 @@ input.inputti{
 
 
 /*Koitetaas saada superfish kauniimmaks*/
-ul.example_content{
+ul.navigaatio_class{
     list-style-image: none;
     list-style: none;
 }
 
-#example_4{
+#navigaatio_id{
     margin: 25px;
     margin-top: 35px;
     padding: 10px;
@@ -87,33 +87,33 @@ ul.example_content{
     float: left;
 }
 
-#example_4.example_content {
+#navigaatio_id.navigaatio_class {
   border: 10px solid #E0E0E0;/#D6D1B9;/*Tässä jtn hassua, mut näyttää hyvältä*/
   padding: 10px; }
-  #example_4.example_content #js_navigation {
+  #navigaatio_id.navigaatio_class #js_navigation {
     float: left;
     width: 120px;
     background-color: #D6D1B9; }
-    #example_4.example_content #js_navigation ul {
+    #navigaatio_id.navigaatio_class #js_navigation ul {
       padding-left: 5px; }
-      #example_4.example_content #js_navigation ul ul {
+      #navigaatio_id.navigaatio_class #js_navigation ul ul {
         padding-left: 20px; }
-    #example_4.example_content #js_navigation a {
+    #navigaatio_id.navigaatio_class #js_navigation a {
       text-decoration: none;
       color: #7f7669; }
-      #example_4.example_content #js_navigation a:hover, #example_4.example_content #js_navigation a:active {
+      #navigaatio_id.navigaatio_class #js_navigation a:hover, #navigaatio_id.navigaatio_class #js_navigation a:active {
         text-decoration: underline; }
-    #example_4.example_content #js_navigation li {
+    #navigaatio_id.navigaatio_class #js_navigation li {
       border: medium none;
       list-style-image: none;
       list-style-type: none;
       padding: 2px; }
-      #example_4.example_content #js_navigation li a.selected {
+      #navigaatio_id.navigaatio_class #js_navigation li a.selected {
         color: #4c4338;
         text-decoration: underline; }
-      #example_4.example_content #js_navigation li li {
+      #navigaatio_id.navigaatio_class #js_navigation li li {
         font-size: 10pt; }
-  #example_4.example_content .content {
+  #navigaatio_id.navigaatio_class .content {
     padding: 10px;
     float: left;
     width: 400px; }
