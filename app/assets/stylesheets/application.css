@@ -19,18 +19,18 @@
 
 body {
     margin: 1em auto;
-    max-width: 60%;
+    max-width: 70%;
     border: dotted 1px black;
 }
 div.navi {
     margin: 25px;
     float: left;
-    width: 170px;
+    width: 270px;
     color: black;
     background-color: #D0D0D0;
     border: solid black 1px;
     margin-top: 35px;
-    min-height: 250px;
+    min-height: 300px;
     padding: 10px;
     padding-right: 0px;
 }
@@ -44,7 +44,7 @@ div.with {
 
 
 div.withNavi div.content {
-    padding-left: 240px;
+    padding-left: 350px;
     background-color: #efefef/*#eee*/;
     padding-top: 20px;
     padding-bottom: 20px;

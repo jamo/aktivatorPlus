@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 <h2>Question: <%= @question.name%>
 </h2>
-
+<% debugger %>
 <% if session[:user_id]%>
   <% if @question.active?%>
     <%= button_to "Deactivate",course_question_activate_path(@course, @question, :activate => false) , :method => :activate %>

@@ -26,7 +26,11 @@
     <body id="kaikki">
       <% if session[:user_id]%>
         <div class="withNavi">
-          <%= render 'layouts/navi'%>
+          <% #debugger %>
+          <div class="navi">
+          <%= render_navigation(:expand_all => true) %>
+          </div>
+          <!--<%#= render 'layouts/navi'%>-->
           <% else%>
           <div class=withOutNavi>
             <%end%>
