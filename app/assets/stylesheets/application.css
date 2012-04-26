@@ -13,7 +13,7 @@
  */
 
 #kaikki {
-    background: LightGoldenRodYellow;
+    background: #e8e8e8;/*LightGoldenRodYellow;*/
 }
 
 
@@ -41,7 +41,7 @@ div.with {
 
 div.withNavi div.content {
     padding-left: 300px;
-    background-color: #efefef/*#eee*/;
+    background-color: #f8f8f8;/*#efefef/*#eee*/;
     padding-top: 20px;
     padding-bottom: 20px;
     min-height: 400px;/*700px;*/
@@ -61,7 +61,7 @@ div.withOutNavi div.content {
 div.footer {
     font-size: 1px;
     border-top: solid 2px gray;
-    background-color: #eee;
+    background-color: #f8f8f8;
     padding: 1em;
 }
 
@@ -93,14 +93,14 @@ ul.example_content{
     padding-right: 0px;
     font-size: 20px;
     line-height: 50px;
-    background-color: #D0D0D0;
+    background-color: #D8D8D8;/*#D0D0D0;*/
     min-width: 200px;
     text-indent: 20px;
     float: left;
 }
 
 #example_4.example_content {
-  border: 10px solid #D6D1B9;
+  border: 10px solid #E0E0E0;#D6D1B9;*/
   padding: 0px; }
   #example_4.example_content #js_navigation {
     float: left;
