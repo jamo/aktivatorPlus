@@ -19,7 +19,7 @@
 
 body {
     margin: 1em auto;
-    max-width: 70%;
+    max-width: 60%;
     border: dotted 1px black;
 }
 /*div.navi {
@@ -40,7 +40,7 @@ div.with {
 }
 
 div.withNavi div.content {
-    padding-left: 350px;
+    padding-left: 300px;
     background-color: #efefef/*#eee*/;
     padding-top: 20px;
     padding-bottom: 20px;

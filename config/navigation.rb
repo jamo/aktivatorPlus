@@ -37,12 +37,6 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :courses, 'Courses', courses_path do |co|
       co.item  :courses, 'All Courses', courses_path
       co.item :new, 'New Course', new_course_path
-##      if params[:controller]=="courses"
-##        @co_id = params[:id]
-##      elsif params[:controller]=="questions"
-##        @co_id == params[:course_id]
-##      end
-      ##Kun tiedetään kursin ID voidaan näyttää sen kommentit
       if params[:controller]=="courses" and params[:id] or params[:course_id]
         @course_id = nil
         if params[:controller]=="courses"
@@ -66,6 +60,7 @@ SimpleNavigation::Configuration.run do |navigation|
 
 
       primary.item :questions, 'Questions', course_questions_path(@course_id) do |qu|
+        qu.item :all, 'All Questions', course_questions_path(@course)
         qu.item :new, 'New Question', new_course_question_path(@course)
         if params[:course_id] and params[:id]
           qu.item :answer, 'Answer to This Question', new_course_question_answer_path(params[:course_id], params[:id])
@@ -79,11 +74,6 @@ SimpleNavigation::Configuration.run do |navigation|
     end
     primary.item :logout, 'Logout', logout_path, :method => :delete
     button_to "Sign out", logout_path, :method => :delete
-
-
-#    primary.item :comments, 'Comments'
-
-
 
 
 
