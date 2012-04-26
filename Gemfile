@@ -6,6 +6,7 @@ gem 'rails', '3.2.2'
 gem 'googlecharts'
 #simple-navigation
 gem 'simple-navigation'
+gem 'rails_superfish'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'

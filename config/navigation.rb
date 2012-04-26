@@ -32,6 +32,8 @@ SimpleNavigation::Configuration.run do |navigation|
 
   # Define the primary navigation
   navigation.items do |primary|
+    primary.dom_id='example_4'#'navigaatio_id'
+    primary.dom_class='example_content'#'navigaatio_class'
     primary.item :courses, 'Courses', courses_path do |co|
       co.item  :courses, 'All Courses', courses_path
       co.item :new, 'New Course', new_course_path

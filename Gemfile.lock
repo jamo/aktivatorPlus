@@ -76,6 +76,7 @@ GEM
       activesupport (= 3.2.2)
       bundler (~> 1.0)
       railties (= 3.2.2)
+    rails_superfish (0.1.8)
     railties (3.2.2)
       actionpack (= 3.2.2)
       activesupport (= 3.2.2)
@@ -129,6 +130,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 3.2.2)
+  rails_superfish
   ruby-debug19
   sass-rails (~> 3.2.2)
   simple-navigation

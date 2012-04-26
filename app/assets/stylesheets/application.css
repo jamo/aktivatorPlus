@@ -22,37 +22,31 @@ body {
     max-width: 70%;
     border: dotted 1px black;
 }
-div.navi {
+/*div.navi {
     margin: 25px;
+    margin-top: 35px;
+    padding: 10px;
+    padding-right: 0px;
     float: left;
     width: 270px;
     color: black;
     background-color: #D0D0D0;
     border: solid black 1px;
-    margin-top: 35px;
     min-height: 300px;
-    padding: 10px;
-    padding-right: 0px;
-}
-/*ul.naviNoDots{
-    list-style-image: none;
-    list-style: none;
 }*/
+
 div.with {
     background-color: #efefef;
 }
-
 
 div.withNavi div.content {
     padding-left: 350px;
     background-color: #efefef/*#eee*/;
     padding-top: 20px;
     padding-bottom: 20px;
-    min-height: 700px;
-/*    margin-left: 30px;*/
-
-
+    min-height: 400px;/*700px;*/
 }
+
 div.withOutNavi div.content {
     background-color: #efefef;
     padding-top: 20px;
@@ -62,11 +56,9 @@ div.withOutNavi div.content {
     padding-bottom: 10px;
     min-height: 275px;
     text-indent: 15px;
-/*text-indent: 15px;
-   text-align: center;*/
 }
+
 div.footer {
-    /*margin: 1em;*/
     font-size: 1px;
     border-top: solid 2px gray;
     background-color: #eee;
@@ -79,13 +71,61 @@ p.footer {
 }
 
 div.fields{
-
-
     margin-right: 0.5em;
-
 }
 
 input.inputti{
     margin-left: 20px;
     display: block;
 }
+
+
+/*Koitetaas saada superfish kauniimmaks*/
+ul.example_content{
+    list-style-image: none;
+    list-style: none;
+}
+
+#example_4{
+    margin: 25px;
+    margin-top: 35px;
+    padding: 10px;
+    padding-right: 0px;
+    font-size: 20px;
+    line-height: 50px;
+    background-color: #D0D0D0;
+    min-width: 200px;
+    text-indent: 20px;
+    float: left;
+}
+
+#example_4.example_content {
+  border: 10px solid #D6D1B9;
+  padding: 0px; }
+  #example_4.example_content #js_navigation {
+    float: left;
+    width: 120px;
+    background-color: #D6D1B9; }
+    #example_4.example_content #js_navigation ul {
+      padding-left: 5px; }
+      #example_4.example_content #js_navigation ul ul {
+        padding-left: 20px; }
+    #example_4.example_content #js_navigation a {
+      text-decoration: none;
+      color: #7f7669; }
+      #example_4.example_content #js_navigation a:hover, #example_4.example_content #js_navigation a:active {
+        text-decoration: underline; }
+    #example_4.example_content #js_navigation li {
+      border: medium none;
+      list-style-image: none;
+      list-style-type: none;
+      padding: 2px; }
+      #example_4.example_content #js_navigation li a.selected {
+        color: #4c4338;
+        text-decoration: underline; }
+      #example_4.example_content #js_navigation li li {
+        font-size: 10pt; }
+  #example_4.example_content .content {
+    padding: 10px;
+    float: left;
+    width: 400px; }
