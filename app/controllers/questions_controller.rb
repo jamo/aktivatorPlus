@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
       @kysymykset.push ao.title
       @vastausTulokset.push ao.answers.count
     end
-    @chart = Gchart.pie_3d(:title => @question.name, :labels => @kysymykset, :data => @vastausTulokset, :size => "500x250", :bg => {:color => 'f8f8f8'})
+    @chart = Gchart.pie_3d(:labels => @kysymykset, :data => @vastausTulokset, :size => "500x250", :bg => {:color => 'f8f8f8'})
     @comments = Comment.find_all_by_question_id(@question.id)
     @admin = false
     @admin = User.find(session[:user_id]).administrator? unless session[:user_id] == nil
