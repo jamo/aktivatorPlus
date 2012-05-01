@@ -1,6 +1,6 @@
-<h1>Course: <%= @course.name%> </h1>
+<h1><%= @course.name%> </h1>
 <p id="notice"><%= notice %></p>
-<h2>Question: <%= @question.name%>
+<h2><%= @question.name%>
 </h2>
 <% if session[:user_id]%>
   <% if @question.active?%>
@@ -31,7 +31,7 @@
 
 <% if @admin %>
   <% if @comments.empty?%>
-    <h3>Ei kommentteja</h3>
+    <h3>No Comments</h3>
   <% end %>
   <% @comments.each do |c| %>
     <div class="commentComment">
