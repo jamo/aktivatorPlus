@@ -2,7 +2,7 @@
 <h1><%= "#{@course.name}"%></h1>
 <h2><%="#{@question.name}"%></h2>
 <% if (@question.active?) %>
-  <ul>
+  <ul class="newAnswer">
     <%= form_for([@course, @question ,@question.answers.build])  do |f|%>
       <% @question.answer_options.each do |ao|  %>
         <li>
