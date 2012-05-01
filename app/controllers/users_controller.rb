@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-   skip_before_filter :authorize, :only => [:new, :create, :index]
+  # skip_before_filter :authorize, :only => [:new, :create, :index]
 
   # GET /users
   # GET /users.xml
