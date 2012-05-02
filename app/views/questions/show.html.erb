@@ -19,6 +19,7 @@
 
   <% end %>
 </ol>
+<p> <%= pluralize(@answerCount, 'answer')  %> </p>
 <% if  session[:user_id] and  @question.active? %>
   <%= link_to 'Active answer url', new_course_question_answer_path(@course.id, @question.id)%>
 <% end %>
@@ -28,11 +29,14 @@
 <%= image_tag(@chart)  %>
 <br />
 <%= link_to 'Return back', courses_path %>
-
+<br />
+<br />
 <% if @admin %>
   <% if @comments.empty?%>
     <h3>No Comments</h3>
   <% end %>
+
+  <%= pluralize(@comments.size, 'comment') unless @comments == nil %>
   <% @comments.each do |c| %>
     <div class="commentComment">
       <p ><%= c.created_at%>

@@ -20,6 +20,7 @@ class QuestionsController < ApplicationController
   def show
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:id])
+
     @vastausTulokset = Array.new
     @kysymykset = Array.new
     @question.answer_options.each do |ao|
@@ -27,6 +28,8 @@ class QuestionsController < ApplicationController
       @vastausTulokset.push ao.answers.count
     end
     @chart = Gchart.pie_3d(:labels => @kysymykset, :data => @vastausTulokset, :size => "500x250", :bg => {:color => 'f8f8f8'})
+    @answerCount = 0
+    @vastausTulokset.each{ |int| @answerCount += int }
     @comments = Comment.find_all_by_question_id(@question.id)
     @admin = false
     @admin = User.find(session[:user_id]).administrator? unless session[:user_id] == nil
