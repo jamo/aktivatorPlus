@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>ToteutusDokumentti</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-05-04 02:11:55 EEST"/>
+<meta name="author" content="jarmo"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+        border: 1pt solid #AEBDCC;
+        background-color: #F3F5F7;
+        padding: 5pt;
+        font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">ToteutusDokumentti</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 JOHDANTO (1) </a>
+<ul>
+<li><a href="#sec-1.1">1.1 Järjestelmän tarkoitus </a></li>
+<li><a href="#sec-1.2">1.2 Toimintaympäristö </a></li>
+<li><a href="#sec-1.3">1.3 Toteutusympäristö </a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 OHJELMISTON RAKENNE (2) </a></li>
+<li><a href="#sec-3">3 JÄRJESTELMÄN KOMPONENTIT (3) </a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> JOHDANTO (1) </h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+</div>
+
+<div id="outline-container-1.1" class="outline-3">
+<h3 id="sec-1.1"><span class="section-number-3">1.1</span> Järjestelmän tarkoitus </h3>
+<div class="outline-text-3" id="text-1.1">
+
+<p>Järjestelmän käyttötarkoituksena on toteuttaa esimerkiksi kurssikyselyitä,
+joihin tässä tapauksessa opiskelijat voivat nopeasti vastata,  näin saadaan hyödyllistä tietoa esim. kurssin tehtävien vaikseustasosta.
+Tavoitteena on toteuttaa järjestelmä, jolla voi kyselyitä, joihin vastaamiseen ei mene yli minuuttia.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1.2" class="outline-3">
+<h3 id="sec-1.2"><span class="section-number-3">1.2</span> Toimintaympäristö </h3>
+<div class="outline-text-3" id="text-1.2">
+
+<ul>
+<li>
+Missä laite ja ohjelmistoympäristössä järjestelmän on tarkoitus toimia.
+</li>
+<li>
+Sovellus toimii RoR ympäristoissä, joissa tuotantotietokanta on postgresql ja kehitys tietokanta on sqlite3. Nämä on helppo muuttaa.
+</li>
+<li>
+Sovellus toimii myös suoraan herokuun deployattuna.
+</li>
+<li>
+Ainakin  ruby 1.9.2-p290llä ja rails 3.2.2llä sovellus toimii moitteetta
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.3" class="outline-3">
+<h3 id="sec-1.3"><span class="section-number-3">1.3</span> Toteutusympäristö </h3>
+<div class="outline-text-3" id="text-1.3">
+
+<ul>
+<li>
+Ruby on rails kielellä ja deployaus herokuun.
+
+
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> OHJELMISTON RAKENNE (2) </h2>
+<div class="outline-text-2" id="text-2">
+
+<p><img src="OhjelmistonYleisrakennesivukaavioTSOHA.png"  alt="OhjelmistonYleisrakennesivukaavioTSOHA.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> JÄRJESTELMÄN KOMPONENTIT (3) </h2>
+<div class="outline-text-2" id="text-3">
+
+<ul>
+<li id="sec-3.1">assets <br/>
+<ul>
+<li id="sec-3.1.1">images <br/>
+<ul>
+<li id="sec-3.1.1.1">rails.png <br/>
+<pre class="example">
+Railsissa valmiina oleva kuva, perjaatteessa turha deployatussa sovelluksessa
+</pre>
+
+</li>
+</ul>
+</li>
+<li id="sec-3.1.2">javascripts <br/>
+<pre class="example">
+Kontrollerikohtaiset javascript tiedostot, tyhjiä mutta rails luo ne valmiiksi
+</pre>
+
+<ul>
+<li id="sec-3.1.2.1">admin.js.coffee <br/>
+</li>
+<li id="sec-3.1.2.2">answer_options.js.coffee <br/>
+</li>
+<li id="sec-3.1.2.3">answers.js.coffee <br/>
+</li>
+<li id="sec-3.1.2.4">application.js <br/>
+</li>
+<li id="sec-3.1.2.5">comments.js.coffee <br/>
+</li>
+<li id="sec-3.1.2.6">courses.js.coffee <br/>
+</li>
+<li id="sec-3.1.2.7">hoverIntent.js <br/>
+</li>
+<li id="sec-3.1.2.8">jquery-1.2.6.min.js <br/>
+</li>
+<li id="sec-3.1.2.9">jquery.bgiframe.min.js <br/>
+</li>
+<li id="sec-3.1.2.10">questions.js.coffee <br/>
+</li>
+<li id="sec-3.1.2.11">sessions.js.coffee <br/>
+</li>
+<li id="sec-3.1.2.12">superfish.js <br/>
+</li>
+<li id="sec-3.1.2.13">supersubs.js <br/>
+</li>
+<li id="sec-3.1.2.14">users.js.coffee <br/>
+</li>
+</ul>
+</li>
+<li id="sec-3.1.3">stylesheets <br/>
+<pre class="example">
+Kontrollerikohtaiset css tiedostot
+</pre>
+
+<ul>
+<li id="sec-3.1.3.1">admin.css.scss <br/>
+</li>
+<li id="sec-3.1.3.2">answer_options.css.scss <br/>
+</li>
+<li id="sec-3.1.3.3">answers.css.scss <br/>
+</li>
+<li id="sec-3.1.3.4">application.css <br/>
+<pre class="example">
+ Kaikille tarkoitettu css tiedosto, johon koottuna käytännössa kaikkiin näkymiin vaikuttavat näkymät
+</pre>
+
+</li>
+<li id="sec-3.1.3.5">comments.css.scss <br/>
+</li>
+<li id="sec-3.1.3.6">courses.css.scss <br/>
+</li>
+<li id="sec-3.1.3.7">questions.css.scss <br/>
+</li>
+<li id="sec-3.1.3.8">scaffolds.css.scss <br/>
+</li>
+<li id="sec-3.1.3.9">sessions.css.scss <br/>
+</li>
+<li id="sec-3.1.3.10">users.css.scss <br/>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="sec-3.2">controllers <br/>
+<pre class="example">
+Eri näkymien kontrollerit
+</pre>
+
+<ul>
+<li id="sec-3.2.1">admin_controller.rb <br/>
+<pre class="example">
+Admin näkymän kontrolleri
+</pre>
+
+</li>
+<li id="sec-3.2.2">answer_options_controller.rb <br/>
+<pre class="example">
+Answer_optionssin kontrolleri, joka on tyhjä, mutta answerolioiden olemassaolon takia tarvitaan
+</pre>
+
+</li>
+<li id="sec-3.2.3">answers_controller.rb <br/>
+<pre class="example">
+Vastaus näkymän kontrolleri. Tarjoaa uuden vastauksen luonnin
+</pre>
+
+</li>
+<li id="sec-3.2.4">application_controller.rb <br/>
+<pre class="example">
+Koko sovelluksen yhteinen kontrolleri, jossa kirjautumiseen ohjaava pala, authorize -metodi
+</pre>
+
+</li>
+<li id="sec-3.2.5">comments_controller.rb <br/>
+<pre class="example">
+Kommenttien näyttämiseen liittyvä kontrolleri
+</pre>
+
+</li>
+<li id="sec-3.2.6">courses_controller.rb <br/>
+<pre class="example">
+ Kurssi näkymän kontrolleri, uuden kurssin luonti, muokkaus ja poisto
+</pre>
+
+</li>
+<li id="sec-3.2.7">questions_controller.rb <br/>
+<pre class="example">
+Kysymysten kontrolleri, kysymyksen luonti, muokkaus, poisto
+</pre>
+
+</li>
+<li id="sec-3.2.8">sessions_controller.rb <br/>
+<pre class="example">
+Sessioiden kontrolleri, hoitaa autentikaation
+</pre>
+
+</li>
+<li id="sec-3.2.9">users_controller.rb <br/>
+<pre class="example">
+Käyttäjiin liittyvä kontrolleri, hoitaa käyttyäjien luonnin, muokkauksen ja poistamisen
+</pre>
+
+</li>
+</ul>
+</li>
+<li id="sec-3.3">helpers <br/>
+<pre class="example">
+Helper luokkia, tyhjää täynnä. Rails luo ne jos niitä vaikka tarvitsisi
+</pre>
+
+<ul>
+<li id="sec-3.3.1">admin_helper.rb <br/>
+</li>
+<li id="sec-3.3.2">answer_options_helper.rb <br/>
+</li>
+<li id="sec-3.3.3">answers_helper.rb <br/>
+</li>
+<li id="sec-3.3.4">application_helper.rb <br/>
+</li>
+<li id="sec-3.3.5">comments_helper.rb <br/>
+</li>
+<li id="sec-3.3.6">courses_helper.rb <br/>
+</li>
+<li id="sec-3.3.7">questions_helper.rb <br/>
+</li>
+<li id="sec-3.3.8">sessions_helper.rb <br/>
+</li>
+<li id="sec-3.3.9">users_helper.rb <br/>
+</li>
+</ul>
+</li>
+<li id="sec-3.4">mailers <br/>
+<pre class="example">
+ Jos lähettäisi sähköpostia, tulisi ne tänne. Tässä ohjelmassa tyhjä.
+</pre>
+
+</li>
+<li id="sec-3.5">models <br/>
+<pre class="example">
+ Mallit, joiden perusteella rails rakentaa tietokantaan riippuvuuksia ja koodiin helpottavia asioita
+</pre>
+
+<ul>
+<li id="sec-3.5.1">answer_option.rb <br/>
+<pre class="example">
+Kuvaa vastausvaihtoehtojen suhteita muihin tietokantaelemntteihin
+</pre>
+
+</li>
+<li id="sec-3.5.2">answer.rb <br/>
+<pre class="example">
+Kuvaa vastausten suhteita muihin tietokantaelemntteihin
+</pre>
+
+</li>
+<li id="sec-3.5.3">comment.rb <br/>
+<pre class="example">
+Kuvaa kurssien suhteita muihin tietokantaelemntteihin
+</pre>
+
+</li>
+<li id="sec-3.5.4">course.rb <br/>
+<pre class="example">
+Kuvaa kurssien suhteita muihin tietokantaelemntteihin
+</pre>
+
+</li>
+<li id="sec-3.5.5">question.rb <br/>
+<pre class="example">
+Kuvaa kysymysten suhteita muihin tietokantaelemntteihin
+</pre>
+
+</li>
+<li id="sec-3.5.6">user.rb <br/>
+<pre class="example">
+Kuvaa käyttäjien suhteita muihin tietokantaelemntteihin
+</pre>
+
+</li>
+</ul>
+</li>
+<li id="sec-3.6">views <br/>
+<pre class="example">
+Kaikki näkymät ovat generoituja. Kaikkien ulkoasuun vaikuttaa kontrollien tulokset
+</pre>
+
+<ul>
+<li id="sec-3.6.1">admin <br/>
+<ul>
+<li id="sec-3.6.1.1">index.html.erb <br/>
+<pre class="example">
+Adminin index näkymä, näyttää kurssien, kysyysten, kommenttejen, vastausten ja vastausvaihtoehtojen määrän tietokannassa
+</pre>
+
+</li>
+<li id="sec-3.6.1.2">answer_options <br/>
+<pre class="example">
+Kansio Answer_optionien olemassaolon takia
+</pre>
+
+
+</li>
+</ul>
+</li>
+<li id="sec-3.6.2">answers <br/>
+<ul>
+<li id="sec-3.6.2.1">new.html.erb <br/>
+<pre class="example">
+Uuden vastauksen
+Sis. answer_option id:n ja kommentin, jotka päätyvät vastaukseen
+</pre>
+
+</li>
+<li id="sec-3.6.2.2">show.html.erb <br/>
+<pre class="example">
+Kysymyksen vastausvaihtoehtojen listaus
+Ja linkki uuden vastauksen antamiseen. Sivu melko turha.
+</pre>
+
+</li>
+</ul>
+</li>
+<li id="sec-3.6.3">comments <br/>
+<ul>
+<li id="sec-3.6.3.1">index.html.erb <br/>
+<pre class="example">
+Kurssin yhden kykymyksen kommenttien listaus
+</pre>
+
+</li>
+</ul>
+</li>
+<li id="sec-3.6.4">courses <br/>
+<ul>
+<li id="sec-3.6.4.1">comments.html.erb <br/>
+<pre class="example">
+Kurssin kaikkien kommenttien listaus kurssikohtaisesti
+</pre>
+
+</li>
+<li id="sec-3.6.4.2">edit.html.erb <br/>
+<pre class="example">
+Kurssin nimen muokkaus, hyödyntää _form.html.erb tiedostoa
+</pre>
+
+</li>
+<li id="sec-3.6.4.3">_form.html.erb <br/>
+<pre class="example">
+Kurssin luonnissa käytetty formi, jossa vain kurssin nimelle kenttä
+</pre>
+
+</li>
+<li id="sec-3.6.4.4">index.html.erb <br/>
+<pre class="example">
+Näyttää listauksen kursseista ja linkin uuden kurssin luonti sivulle
+</pre>
+
+</li>
+<li id="sec-3.6.4.5">new.html.erb <br/>
+<pre class="example">
+Näyttää -form.html.erb tiedoston sisällön
+</pre>
+
+</li>
+</ul>
+</li>
+<li id="sec-3.6.5">layouts <br/>
+<ul>
+<li id="sec-3.6.5.1">application.html.erb <br/>
+<pre class="example">
+Pohja, jonka ympärille sivu rakentuu. Renderöi navigaatiopalkin ja määritteleen css ja javascript tiedostojen käytän
+</pre>
+
+</li>
+<li id="sec-3.6.5.2">_navi.html.erb <br/>
+<pre class="example">
+Navigaationäkymä, joka ei enää ole käytössä
+</pre>
+
+</li>
+</ul>
+</li>
+<li id="sec-3.6.6">questions <br/>
+<ul>
+<li id="sec-3.6.6.1">activate.html.erb <br/>
+<pre class="example">
+Kysymyksen aktivointia varten oleva näkymä, joka on käytännössä tyhjä, sillä näkymän kontrollerin metodi redirectaa heti posi sivulta
+</pre>
+
+</li>
+<li id="sec-3.6.6.2">edit.html.erb <br/>
+<pre class="example">
+Turha näkymä, jota käytettiin aikanaan kysymyksen muokkaukseen.
+</pre>
+
+</li>
+<li id="sec-3.6.6.3">_form.html.erb <br/>
+<pre class="example">
+Näkymä, jolla luodaan uusi kysymys. Sisältää kysymyksen 'nimen' ja tässä vaiheessa 20kpl vastausvaihtoidoille tarkoitettua kenttää
+</pre>
+
+</li>
+<li id="sec-3.6.6.4">index.html.erb <br/>
+<pre class="example">
+Näkymä, joka listaa kaikki kysymykset. Jos käyttäjä ei kirjautnut listaa vain aktiiviset kysymykset
+</pre>
+
+</li>
+<li id="sec-3.6.6.5">new.html.erb <br/>
+<pre class="example">
+Näkymä joka näyttää _form.hml.erb tiedoston sisällön ja jolla luodaan uusi kysymys
+</pre>
+
+</li>
+<li id="sec-3.6.6.6">show.html.erb <br/>
+<pre class="example">
+Näyttää kysymyksen tuloksen, piirakkakaavion tuloksista ja kysymyksen kommentit (vain kirjautuneille)
+</pre>
+
+</li>
+</ul>
+</li>
+<li id="sec-3.6.7">sessions <br/>
+<ul>
+<li id="sec-3.6.7.1">create.html.erb <br/>
+<pre class="example">
+Tyhjä railsin takia olemassa oleva näkymä, jota sisäänkirjautuminen vaatii
+</pre>
+
+</li>
+<li id="sec-3.6.7.2">destroy.html.erb <br/>
+<pre class="example">
+Logout näkymä, tuhoaa session ja kirjaa siten käyttäjän ulos
+</pre>
+
+</li>
+<li id="sec-3.6.7.3">new.html.erb <br/>
+<pre class="example">
+Kirjautumis ikkuna, Käyttäjänimelle kenttä, Salasanalle
+Sessions.rb modelissa on syötteiden tarkistus
+</pre>
+
+</li>
+</ul>
+</li>
+<li id="sec-3.6.8">users <br/>
+<ul>
+<li id="sec-3.6.8.1">edit.html.erb <br/>
+<pre class="example">
+Käyttäjän tietojen editointi, näyttää _form.html.erb tiedoston
+</pre>
+
+</li>
+<li id="sec-3.6.8.2">_form.html.erb <br/>
+<pre class="example">
+Käyttäjää luotaessa ja muokattaessa näytettävä tiedosto, sis Käyttäjänimen, salasana ja salasanan varmistus kentät.
+Users.rb model huolehtii salasanan hashaamisesta, ja syötteen oikeellisuudesta
+</pre>
+
+</li>
+<li id="sec-3.6.8.3">index.html.erb <br/>
+<pre class="example">
+Listaa käyttäjät
+</pre>
+
+</li>
+<li id="sec-3.6.8.4">makeAdmin.html.erb <br/>
+<pre class="example">
+Näkymä käyttäjän oikeuksien muokauksen takia. kukaan ei koskaan tule tätä näkemään
+</pre>
+
+</li>
+<li id="sec-3.6.8.5">new.html.erb <br/>
+<pre class="example">
+Näyttää _form.html.erb näkymän uuden käyttäjän luonnin takia
+</pre>
+
+</li>
+<li id="sec-3.6.8.6">show.html.erb <br/>
+<pre class="example">
+Näyttää käyttäjän tiedot, ja tiedon, onko käytttäjä admin.
+</pre>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="postamble">
+<p class="author"> Author: jarmo
+<a href="mailto:jarmo@linux">&lt;jarmo@linux&gt;</a>
+</p>
+<p class="date"> Date: 2012-05-04 02:11:55 EEST</p>
+<p class="creator">HTML generated by org-mode 6.33x in emacs 23</p>
+</div>
+</div>
+</body>
+</html>
