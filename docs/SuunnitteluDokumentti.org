@@ -1,9 +1,3 @@
-* eka
-** toka
-*** kolm
-**** nelj
-***** viis
-
 * JOHDANTO (1)
 
 
