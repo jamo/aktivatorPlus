@@ -1,4 +1,6 @@
 * JOHDANTO (1)
+
+
 ** Järjestelmän tarkoitus
   - Tiivis kuvaus siitä mistä on kyse.
   - Millaisen toiminnan tukemiseen järjestelmä on tarkoitettu.
@@ -27,7 +29,7 @@
 * Yleiskuva järjestelmästä (2)
 ** Sidosryhmäkaavio
    [[file:sidosryhmakaavio.png]]
-** Käyttäjäruhmät
+** Käyttäjäryhmät
  - Kursilainen (ei autentikointia) tarkoitetaan kurssilaista, jolle ehdotetaan kyselyyn vastaamista.
 
  - Admin on henkilö, jolla oikeudet luoda uusia kursseja ja kysymyksiä, sekä lukea kommentteja

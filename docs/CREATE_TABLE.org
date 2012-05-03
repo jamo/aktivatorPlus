@@ -1,16 +1,31 @@
 CREATE TABLE "answer_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "choice" integer, "question_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+
 CREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "choice" integer, "question_id" integer, "course_id" integer, "answer_option_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+
 CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "question_id" integer, "course_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+
 CREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+
 CREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "course_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "active" boolean);
+
 CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);
+
 CREATE TABLE "shorts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "uri" varchar(255), "shortener" varchar(255), "clicks" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+
 CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "hashed_password" varchar(255), "salt" varchar(255), "administrator" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+
 CREATE INDEX "index_answer_options_on_question_id" ON "answer_options" ("question_id");
+
 CREATE INDEX "index_answers_on_answer_option_id" ON "answers" ("answer_option_id");
+
 CREATE INDEX "index_answers_on_course_id" ON "answers" ("course_id");
+
 CREATE INDEX "index_answers_on_question_id" ON "answers" ("question_id");
+
 CREATE INDEX "index_comments_on_course_id" ON "comments" ("course_id");
+
 CREATE INDEX "index_comments_on_question_id" ON "comments" ("question_id");
+
 CREATE INDEX "index_questions_on_course_id" ON "questions" ("course_id");
+
 CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
