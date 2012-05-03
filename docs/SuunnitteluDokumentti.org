@@ -34,13 +34,15 @@
 
 * Käyttätapaukset (3)
    Pääsivulla / cources -sivulla
+
    Admin
-   On kaikista kursseista listaus
+   - On kaikista kursseista listaus
    - Voi luoda uuden kurssin
    - voi poistaa kurssin
    - voi siirtyä katselemaan kursseja
 
    Kurssin sivulla / cources/:id
+
    Admin
    - Näkee kaikki kyselyt
    - Voi luoa uusia kyselyitä
@@ -51,11 +53,13 @@
    - Näkee kysymykset, joihin vastaaminen mahdollista
 
    Kysymyssivulla / cources/:id/:kysID
+
    Admin
    - Näkee vastaukset
    - Voi vastata kysymykseen
    - Näkee vastauksen jälkeen jonkinasteisen graafin vastausten jakautumisesta
    - Näkee kysymykseen liittyvät kommentit
+
    Peruskäyttäjä/Anonyymi
    - Voi vastata kysymykseen
    - Voi kommentoida kysymystä
