@@ -22,6 +22,7 @@
 * JÄRJESTELMÄN KOMPONENTIT (3)
 #+OPTIONS: ^:nil
 #Jotta _-merkit oikein
+*** Tarkat kuvaukset oleellisimmista tiedoista
 **** assets
 *****   images
 ******      rails.png
@@ -171,5 +172,52 @@
 : Näyttää _form.html.erb näkymän uuden käyttäjän luonnin takia
 ******        show.html.erb
 : Näyttää käyttäjän tiedot, ja tiedon, onko käytttäjä admin.
+*** Muiden tiedostojen pääosin suppeampi selostus
+***** config
+: konfiguraatio tiedostoja
+****** navigation.rb
+: Navigaatiopalkin gem:in konfiguraatio
+****** routes.rb
+: Luokkien keskenäinen hierarkia ja nettisivujen osoitteiden luonti ja mappaus
+***** config.ru
+: Tätä rake käyttää käynnistäessään tämän sovelluksen
+***** db
+: Tietokantaan liittyviä tiedostoja
+****** schema.rb
+: sisältää railsin käsityksen tietokannasta
+****** migrate
+: Migraatio tiedostot, joiden perusteella Rails rakentaa tietokannan
+***** doc
+: Railsin luoma kansio, jossa ei mitään tärkeää
+***** docs
+: Kansio, jossa tämäkin filu on. Sisältää kaiken dokumentaation
+***** Gemfile
+: Tiedosto, joka määrittelee, mitä gem:ejä on käytössä
+***** Gemfile.lock
+: Lukkotiedosto ylläolevalle
+***** lib
+: Railsin luoma tyhjä kansio
+***** log
+: lokitiedostoja
+***** public
+: kansio, jossa esim. 404.html filut, Railsin luomia
+***** Rakefile
+: Rake -komennon käyttäm tiedosto
+***** README.org
+: Readme filu
+***** ruby_README.rdoc
+: Railsin oma README
+***** script
+: Railsin omia tiedostoja
+***** spec
+: Railsin luomia tiedostoja, testaamista varten
+***** test
+: Railsin luoma kansio testeille
+***** tmp
+: Nimi kuvannee kaiken
+***** TODO
+: oma TODO tiedosto
+***** vendor
+: Railsin omia tiedostoja
 
 
