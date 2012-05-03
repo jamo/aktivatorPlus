@@ -164,6 +164,7 @@
 ******        _form.html.erb
 : Käyttäjää luotaessa ja muokattaessa näytettävä tiedosto, sis Käyttäjänimen, salasana ja salasanan varmistus kentät.
 : Users.rb model huolehtii salasanan hashaamisesta, ja syötteen oikeellisuudesta
+: Tarkistetaan käyttäjän nimen uniikkisuus
 ******        index.html.erb
 : Listaa käyttäjät
 ******        makeAdmin.html.erb
