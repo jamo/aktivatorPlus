@@ -1,64 +1,65 @@
 * JOHDANTO (1)
 ** Järjestelmän tarkoitus
-  -Tiivis kuvaus siitä mistä on kyse.
-  -Millaisen toiminnan tukemiseen järjestelmä on tarkoitettu.
-  -Mitkä ovat järjestelmän tavoitteet.
-  -Nämä tiedot saa yleensä tehtäväkuvauksesta.
-  
-  Järjestelmän käyttötarkoituksena on toteuttaa esimerkiksi kurssikyselyitä, joihin tässä tapauksessa opiskelijat voivat nopeasti vastata, 
+  - Tiivis kuvaus siitä mistä on kyse.
+  - Millaisen toiminnan tukemiseen järjestelmä on tarkoitettu.
+  - Mitkä ovat järjestelmän tavoitteet.
+  - Nämä tiedot saa yleensä tehtäväkuvauksesta.
+  - Järjestelmän käyttötarkoituksena on toteuttaa esimerkiksi kurssikyselyitä, joihin tässä tapauksessa opiskelijat voivat nopeasti vastata,
+
   näin saadaan hyödyllistä tietoa esim. kurssin tehtävien vaikseustasosta.
-  Tavoitteena on toteuttaa järjestelmä, jolla voi kyselyitä, joihin vastaamiseen ei mene yli minuuttia. 
-  
-** Toimintaympäristö  
- Missä laite ja ohjelmistoympäristössä järjestelmän on tarkoitus toimia.
+  Tavoitteena on toteuttaa järjestelmä, jolla voi kyselyitä, joihin vastaamiseen ei mene yli minuuttia.
+
+** Toimintaympäristö
+   - Missä laite ja ohjelmistoympäristössä järjestelmän on tarkoitus toimia.
 
 ** Rajaukset
- Mahdolliset rajaukset koskien määrittelyn, suunnittelun ja toteutuksen laajuutta.
-*** Deploy 
-    Kaikkialla, missä postgresql tietokanta, ruby 1.9.2-p290 ja rails 3.2.2
+   - Mahdolliset rajaukset koskien määrittelyn, suunnittelun ja toteutuksen laajuutta.
+
+*** Deploy
+   - Kaikkialla, missä postgresql tietokanta, ruby 1.9.2-p290 ja rails 3.2.2
 *** Develpoment
-    Kaikkialla, missä sqlite3 asennettuna, ruby 1.9.2-p290 ja rails 3.2.2
+   - Kaikkialla, missä sqlite3 asennettuna, ruby 1.9.2-p290 ja rails 3.2.2
 
 ** Toteutusympäristö
-** Missä ympäristössä työ toteutetaan. 
- Ruby on rails kielellä ja deployaus herokuun.
- 
+** Missä ympäristössä työ toteutetaan.
+   - Ruby on rails kielellä ja deployaus herokuun.
+
 * Yleiskuva järjestelmästä (2)
 ** Sidosryhmäkaavio
    [[file:sidosryhmakaavio.png]]
 ** Käyttäjäruhmät
-  Kursilainen (ei autentikointia) tarkoitetaan kurssilaista, jolle ehdotetaan kyselyyn vastaamista. 
+ - Kursilainen (ei autentikointia) tarkoitetaan kurssilaista, jolle ehdotetaan kyselyyn vastaamista.
 
-  Admin on henkilö, jolla oikeudet luoda uusia kursseja ja kysymyksiä, sekä lukea kommentteja
+ - Admin on henkilö, jolla oikeudet luoda uusia kursseja ja kysymyksiä, sekä lukea kommentteja
 
-* Käyttätapaukset (3)     
+* Käyttätapaukset (3)
    Pääsivulla / cources -sivulla
    Admin
    On kaikista kursseista listaus
-   -Voi luoda uuden kurssin
-   -voi poistaa kurssin
-   -voi siirtyä katselemaan kursseja
+   - Voi luoda uuden kurssin
+   - voi poistaa kurssin
+   - voi siirtyä katselemaan kursseja
 
    Kurssin sivulla / cources/:id
-   Admin 
-   -Näkee kaikki kyselyt
-   -Voi luoa uusia kyselyitä
-   -Voi poistaa kyselyitä, esim. jos kysymyksessä on virheitä
-   -Merkkaa mihin kysymyksiin vastaaminen mahdollista
-   
+   Admin
+   - Näkee kaikki kyselyt
+   - Voi luoa uusia kyselyitä
+   - Voi poistaa kyselyitä, esim. jos kysymyksessä on virheitä
+   - Merkkaa mihin kysymyksiin vastaaminen mahdollista
+
    Peruskäyttäjä/Anonyymi
-   -Näkee kysymykset, joihin vastaaminen mahdollista
-   
+   - Näkee kysymykset, joihin vastaaminen mahdollista
+
    Kysymyssivulla / cources/:id/:kysID
    Admin
-   -Näkee vastaukset
-   -Voi vastata kysymykseen
-   -Näkee vastauksen jälkeen jonkinasteisen graafin vastausten jakautumisesta
-   -Näkee kysymykseen liittyvät kommentit
+   - Näkee vastaukset
+   - Voi vastata kysymykseen
+   - Näkee vastauksen jälkeen jonkinasteisen graafin vastausten jakautumisesta
+   - Näkee kysymykseen liittyvät kommentit
    Peruskäyttäjä/Anonyymi
-   -Voi vastata kysymykseen
-   -Voi kommentoida kysymystä
-   -Näkee vastauksen jälkeen jonkinasteisen graafin vastausten jakautumisesta
+   - Voi vastata kysymykseen
+   - Voi kommentoida kysymystä
+   - Näkee vastauksen jälkeen jonkinasteisen graafin vastausten jakautumisesta
 
 * Järjestelmän tietosisältö (4)
   [[file:tietosisalto.jpeg]]
@@ -66,4 +67,4 @@
    [[file:sivukaavio.jpeg]]
 * Relaatiotietokantakaavio (6)
     [[file:tietokanta1.gif]]
-   
+
