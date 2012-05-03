@@ -1,0 +1,16 @@
+* JOHDANTO (1)
+
+** Järjestelmän tarkoitus
+  Järjestelmän käyttötarkoituksena on toteuttaa esimerkiksi kurssikyselyitä,
+  joihin tässä tapauksessa opiskelijat voivat nopeasti vastata,  näin saadaan hyödyllistä tietoa esim. kurssin tehtävien vaikseustasosta.
+  Tavoitteena on toteuttaa järjestelmä, jolla voi kyselyitä, joihin vastaamiseen ei mene yli minuuttia.
+
+** Toimintaympäristö
+   - Missä laite ja ohjelmistoympäristössä järjestelmän on tarkoitus toimia.
+   - Sovellus toimii RoR ympäristoissä, joissa tuotantotietokanta on postgresql ja kehitys tietokanta on sqlite3. Nämä on helppo muuttaa.
+   - Sovellus toimii myös suoraan herokuun deployattuna.
+   - Ainakin  ruby 1.9.2-p290llä ja rails 3.2.2llä sovellus toimii moitteetta
+
+** Toteutusympäristö
+   - Ruby on rails kielellä ja deployaus herokuun.
+

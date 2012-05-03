@@ -15,8 +15,6 @@
 
 
 ** Toteutusympäristö
-
-** Missä ympäristössä työ toteutetaan.
    - Ruby on rails kielellä ja deployaus herokuun.
 
 * Yleiskuva järjestelmästä (2)
@@ -73,11 +71,11 @@
 
 * Järjestelmän tietosisältö (4)
 
-  [[file:Tietosisalto.png]]
+  [[file:JarjestelmanTietosisalto.png]]
 
 
 * Käyttöliittymän hahmotelma (5)
-   [[file:sivukaavio2.jpeg]]
+   [[file:sivukaavio2TSOHA.png]]
 * Relaatiotietokantakaavio (6)
   [[file:Tietosisalto.png]]
 
