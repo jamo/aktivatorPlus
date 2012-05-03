@@ -221,3 +221,31 @@
 : Railsin omia tiedostoja
 
 
+
+
+* ASENNUSTIEDOT (4)
+  Repon kloonauksen jälkeen tulee suorittaa
+: bundle install
+  Tämä ei onnistu, mikäli koneesta puuttuu jokin sovelluksen käyttämä kompnentti (perus ubuntu 12.04  + ruby 1.9.1p290 toimii + sqlite3 / postgresql )
+: rake db:migrate
+  Luo tietokannan
+: rails server
+  Saa sovelluksen pyörimään kehitys moodissa. On palvelin kohtaista, miten sovelluksen saa pyörimään omalla koneellaan production moodissa, joten sitä ei käsitellä.
+
+  Sovelluksen deployaus herokuun onnistuu helpoisti, oletten että herokuun tarvittava sovellus on koneella ja että sinulla on tunnukset herokuun
+: heroku create --stack cedar
+: git push heroku mastet
+: heroku run rake db:migrate
+: heroku run rake db:seed
+
+  Nyt sovellus on asennettu herokuun, ja on luotu valmiiksi tunnus admin jolla salasana admin
+
+  Tai vaihtoehtoisesti
+: rails run console
+: User.new(:name => 'admin', :password => 'admin', :administrator => true).save!
+: exit
+ Näin olet manuaalisesti luonut ensimmäisen käyttäjäsi
+
+* KÄYNNISTYS / KÄYTTÖOHJE
+  sovellus löytyy herokusta osoitteesta http://radiant-flower-3080.herokuapp.com, kirjautuminen tapahtuu osoitteessa  http://radiant-flower-3080.herokuapp.com/login
+  Tunnuksina tässä 'admin' ja salasana 'admin'

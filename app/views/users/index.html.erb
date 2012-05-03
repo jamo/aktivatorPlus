@@ -18,6 +18,15 @@
 
       <% if @user.administrator? %>
         <td><%= link_to 'Delete', user, confirm: 'Are you sure', method: :delete%> </td>
+        <td>
+        <% if user.administrator?%>
+          <%= button_to "Make to normal user", user_to_admin_path(user, :admin => false) , :method => :makeAdmin %>
+        <% else %>
+          <%= button_to "Make administrator", user_to_admin_path(user, :admin => true) , :method => :makeAdmin %>
+        <% end %>
+        </td>
+
+
       <% end %>
     </tr>
   <% end %>

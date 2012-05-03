@@ -70,6 +70,8 @@ SimpleNavigation::Configuration.run do |navigation|
       end
     end
     primary.item :admin, 'Admin', admin_path do |a|
+      a.item :admin, 'Admin View', admin_path
+      a.item :users, 'New User', new_user_path
       a.item :users, 'Show Users', users_path
     end
     primary.item :logout, 'Logout', logout_path, :method => :delete
