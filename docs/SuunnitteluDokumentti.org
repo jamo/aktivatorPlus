@@ -28,7 +28,7 @@
 
 * Yleiskuva järjestelmästä (2)
 ** Sidosryhmäkaavio
-   [[file:sidosryhmakaavio.png]]
+   [[file:sidosryhmakaavio2.png]]
 ** Käyttäjäryhmät
  - Kursilainen (ei autentikointia) tarkoitetaan kurssilaista, jolle ehdotetaan kyselyyn vastaamista.
 
@@ -70,7 +70,7 @@
 * Järjestelmän tietosisältö (4)
   [[file:tietosisalto.jpeg]]
 * Käyttöliittymän hahmotelma (5)
-   [[file:sivukaavio.jpeg]]
+   [[file:sivukaavio2.jpeg]]
 * Relaatiotietokantakaavio (6)
-    [[file:tietokanta1.gif]]
+    [[file:Tietosisalto.png]]
 
