@@ -1,18 +1,22 @@
 * TODO-list
-
+HUOM - Nämä ovat kaikki jatkon kehitys suunnitelmia ja siten eivät liity TSOHAN palautukseen.
+Näitä ei siis voida tulkita toteuttamattomiksi suunnitelmiksi TSOHAN puitteissa!
 ** Tärkeät
 *** DONE Adminille mahdollisuus tehdä toisesta käyttäjästä admin
 *** DONE EI voi muuttaa kaverin salasanaa
 *** DONE Comments#index kuntoon
 *** DONE kyselyn tuoksen näkyviin kommenttien kanssa samalle sivulle
-
+*** TODO Käyttäjille näkyviin vain omat kurssit, adminille kaikki.
+    Eli Kysymykseen ( ja kurssiin) liittymään User_ID jolloin voidaan helposti rajoittaa että näkee vain omat kurssit.
+    Admin toki näkee kaikki kurssit
+**** TODO Oman kurssin voi poistaa
+     
 ** Valinnaiset
    nämä eivät ole määrittelyjä, jotka ajatellaan kuuuvan tehtävään, vaan jatkokehitys ajatuksia!!!
 *** TODO Kommenttien näyttäminen yhteen partitiaaliin
 
-*** TODO Yleisotsikko kaikille sivuille HEADER?
+*** TODO Yleisotsikko kaikille sivuille HEADER? - Pitää lisätä ehdottomasti
 
-** Kommentteja
 *** DONE Answer#new new answer teksti pois
 *** TODO Syöttökenttien linjaus
 *** DONE question#new teksti New question => New Question
