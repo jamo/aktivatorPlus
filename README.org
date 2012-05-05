@@ -9,3 +9,6 @@
        
 :   __(.)<  __(.)>  __(.)=   AktivatorPlus   >(.)__  <(.)__  =(.)__
 :   \___)   \___)   \___)                     (___/   (___/   (___/ 
+
+
+* Työ löytyy osoitteesta: https://github.com/jamox/aktivatorPlus HUOM. työn kehitys jatkuu yhä, TSOHAN ulkopuolella

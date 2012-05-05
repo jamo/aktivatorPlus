@@ -283,3 +283,5 @@ HUOM. Tämä sama tiedosto on useammassa formaatissa. Tarkoituksena on lukea .ht
   Tunnuksina tässä 'admin' ja salasana 'admin'
   
   Testisovelluksessa ei ole mitään tärkeää, joten sen kanssa voi kokeilla kaikkea, sis. SQL injektiot. Jos niitä löytyy, ilmoitathan siitä minulle. Myös kannan rakentaminen uudestaan on helppoa ja nopeaa.
+
+  Työ löytyy osoitteesta: https://github.com/jamox/aktivatorPlus HUOM. työn kehitys jatkuu yhä, TSOHAN ulkopuolella
