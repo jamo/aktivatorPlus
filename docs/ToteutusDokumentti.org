@@ -1,3 +1,8 @@
+Toteutusdokumentti
+
+HUOM. Tämä sama tiedosto on useammassa formaatissa. Tarkoituksena on lukea .html versiota tästä tiedostosta. 
+
+
 * JOHDANTO (1)
 
 ** Järjestelmän tarkoitus
@@ -7,12 +12,12 @@
 
 ** Toimintaympäristö
    - Missä laite ja ohjelmistoympäristössä järjestelmän on tarkoitus toimia.
-   - Sovellus toimii RoR ympäristoissä, joissa tuotantotietokanta on postgresql ja kehitys tietokanta on sqlite3. Nämä on helppo muuttaa.
+   - Sovellus toimii RoR ympäristoissä, joissa tuotantotietokanta on postgresql ja kehitystietokanta on sqlite3. Nämä on helppo muuttaa.
    - Sovellus toimii myös suoraan herokuun deployattuna.
-   - Ainakin  ruby 1.9.2-p290llä ja rails 3.2.2llä sovellus toimii moitteetta
+   - Ainakin  ruby 1.9.2-p290llä ja rails 3.2.2llä sovellus toimii moitteetta. Teoriassa pitäisi toimia myös muilla rubyn versioilla
 
 ** Toteutusympäristö
-   - Ruby on rails kielellä ja deployaus herokuun.
+   - Ruby kielellä, Ruby on Rails frameworkkia käyttäen ja deployaus herokuun.
 
 
 
@@ -22,7 +27,7 @@
 * JÄRJESTELMÄN KOMPONENTIT (3)
 #+OPTIONS: ^:nil
 #Jotta _-merkit oikein
-*** Tarkat kuvaukset oleellisimmista tiedoista
+** Tarkat kuvaukset oleellisimmista tiedoista
 **** assets
 *****   images
 ******      rails.png
@@ -60,22 +65,48 @@
 : Eri näkymien kontrollerit
 *****    admin_controller.rb
 : Admin näkymän kontrolleri
+: Vastaa:
+:  -admin näkymästä, eli kurssien, kysymysten yms. määrien näyttämisestä
 *****    answer_options_controller.rb
 : Answer_optionssin kontrolleri, joka on tyhjä, mutta answerolioiden olemassaolon takia tarvitaan
+: Ei tee oikeastaan mitään.
 *****    answers_controller.rb
 : Vastaus näkymän kontrolleri. Tarjoaa uuden vastauksen luonnin
+: Vastaa: 
+:  -Uuden vastauksen luonnista tietokantaan ja on vastaussivun taustalla
 *****    application_controller.rb
-: Koko sovelluksen yhteinen kontrolleri, jossa kirjautumiseen ohjaava pala, authorize -metodi
+: Koko sovelluksen yhteinen kontrolleri,
+: Vastaa:
+:  -Kirjautumiseen pakottava before_filter
+:  -kirjautumisen hoitava authorize-metodi
 *****    comments_controller.rb
 : Kommenttien näyttämiseen liittyvä kontrolleri
+: Vastaa:
+:  -Kysymykseen liittyvien kommenttien näyttämisestä
 *****    courses_controller.rb
-:  Kurssi näkymän kontrolleri, uuden kurssin luonti, muokkaus ja poisto
+: Kurssi näkymän kontrolleri, uuden kurssin luonti, muokkaus ja poisto
+: Vastaa:
+:  -Uuden kurssin luonnista 
+:  -Kurssin muokkaamisesta
+:  -Kurssin poistamisesta
+:  -Kurssin poistamisesta
 *****    questions_controller.rb
 : Kysymysten kontrolleri, kysymyksen luonti, muokkaus, poisto
+: Vastaa:
+:  -Uuden kysymyksen luonnista
+:  -Kysymyksen poistamisesta
+:  -Kysymyksen aktivoinnista
+:  -Kysymyksen näyttämisestä
 *****    sessions_controller.rb
 : Sessioiden kontrolleri, hoitaa autentikaation
+: Vastaa:
+:  -Käyttäjän kirjaamisesta sisään ja ulos
 *****    users_controller.rb
-: Käyttäjiin liittyvä kontrolleri, hoitaa käyttyäjien luonnin, muokkauksen ja poistamisen
+: Käyttäjiin liittyvä kontrolleri
+: Vastaa:
+:  -Uuden käyttäjän luomisesta
+:  -Käyttäjän tietojen muokkaamisesta
+:  -Käyttäjän poistamisesta
 ****   helpers
 : Helper luokkia, tyhjää täynnä. Rails luo ne jos niitä vaikka tarvitsisi
 *****    admin_helper.rb
@@ -173,7 +204,7 @@
 : Näyttää _form.html.erb näkymän uuden käyttäjän luonnin takia
 ******        show.html.erb
 : Näyttää käyttäjän tiedot, ja tiedon, onko käytttäjä admin.
-*** Muiden tiedostojen pääosin suppeampi selostus
+** Muiden tiedostojen pääosin suppeampi selostus
 ***** config
 : konfiguraatio tiedostoja
 ****** navigation.rb
@@ -220,14 +251,10 @@
 : oma TODO tiedosto
 ***** vendor
 : Railsin omia tiedostoja
-
-
-
-
 * ASENNUSTIEDOT (4)
-  Repon kloonauksen jälkeen tulee suorittaa
+  Repon kloonauksen/kun palautettu zippi on purettu jälkeen tulee suorittaa
 : bundle install
-  Tämä ei onnistu, mikäli koneesta puuttuu jokin sovelluksen käyttämä kompnentti (perus ubuntu 12.04  + ruby 1.9.1p290 toimii + sqlite3 / postgresql )
+  Tämä ei onnistu, mikäli koneesta puuttuu jokin sovelluksen käyttämä komponentti (perus ubuntu 12.04  + ruby 1.9.1p290 toimii + sqlite3 / postgresql )
 : rake db:migrate
   Luo tietokannan
 : rails server
@@ -237,16 +264,22 @@
 : heroku create --stack cedar
 : git push heroku mastet
 : heroku run rake db:migrate
+  Nyt sovellus on asennettu herokuun, mutta siinä ei ole vielä käyttäjiä
+  
+  Voit luoda käyttäjän joko seesdin avulla:
 : heroku run rake db:seed
 
-  Nyt sovellus on asennettu herokuun, ja on luotu valmiiksi tunnus admin jolla salasana admin
-
-  Tai vaihtoehtoisesti
+  Tai vaihtoehtoisesti konsolilla
 : rails run console
 : User.new(:name => 'admin', :password => 'admin', :administrator => true).save!
 : exit
- Näin olet manuaalisesti luonut ensimmäisen käyttäjäsi
-
+  
+  Nyt sovellukseen voi kirjautua, lisäämällä kirjoittamalla osoitteen perään '/login'
+: ror.oroite.tld/login
+  Kirjautumiselle ei ole painiketta, jotta anonyymeihin kyselyihin vastaavat eivät edes pohtisi, pitääkö järjestelmään kirjautua. 
+  Ja sovellukseen kirjautuvia käyttäjiä on vain muutama, niin  
 * KÄYNNISTYS / KÄYTTÖOHJE
   sovellus löytyy herokusta osoitteesta http://radiant-flower-3080.herokuapp.com, kirjautuminen tapahtuu osoitteessa  http://radiant-flower-3080.herokuapp.com/login
   Tunnuksina tässä 'admin' ja salasana 'admin'
+  
+  Testisovelluksessa ei ole mitään tärkeää, joten sen kanssa voi kokeilla kaikkea, sis. SQL injektiot. Jos niitä löytyy, ilmoitathan siitä minulle. Myös kannan rakentaminen uudestaan on helppoa ja nopeaa.
