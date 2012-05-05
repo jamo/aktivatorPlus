@@ -1,3 +1,11 @@
-*Jarmon tietokantasovellus
-**Sovellus löytyy osoitteesta:  
+* Jarmon tietokantasovellus
+** Sovellus löytyy osoitteesta:  
   http://radiant-flower-3080.herokuapp.com/
+
+
+** Dokumentaatiot ovat docs kansiossa. Huom luethan ne .html tiedostoina.
+
+
+       
+   __(.)<  __(.)>  __(.)=   AktivatorPlus   >(.)__  <(.)__  =(.)__
+   \___)   \___)   \___)                     (___/   (___/   (___/ 
