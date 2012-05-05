@@ -1,9 +1,9 @@
 * Jarmon tietokantasovellus
-** Sovellus löytyy osoitteesta:  
+* Sovellus löytyy osoitteesta:  
   http://radiant-flower-3080.herokuapp.com/
 
 
-** Dokumentaatiot ovat docs kansiossa. Huom luethan ne .html tiedostoina.
+* Dokumentaatiot ovat docs kansiossa. Huom luethan ne .html tiedostoina.
 
 
        
