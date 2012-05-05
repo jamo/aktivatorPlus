@@ -16,6 +16,9 @@
       <%= f.submit 'Submit' %>
     <% end %>
   </ul>
+<%= link_to 'Show results', course_question_path(@course.id, @question) %>
+
+
 <% else %>
   <h2 style="color: red;">This Answer Is Not Active</h2>
 <% end %>
