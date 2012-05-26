@@ -15,7 +15,7 @@
    </tr>
 
   <% @courses.each do |course| %>
-    <tr>
+    <tr class="listedCourses">
       <td><%= link_to "#{course.name}", course_questions_path(course) %></td>
       <% if session[:user_id] %>
         <td><%= link_to 'Rename', edit_course_path(course) %></td>
