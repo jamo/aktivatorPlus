@@ -12,9 +12,9 @@
     <th><h2>Questions: </h2></th>
   </tr>
   <% @course.questions.each do |question| %>
-    <tr>
+    <tr  class="listedQuestion" >
       <% if session[:user_id]%>
-        <td><%= link_to "#{question.name}", course_question_path(@course.id, question) %></td>
+        <td ><%= link_to "#{question.name}", course_question_path(@course.id, question) %></td>
         <td>
           <% if question.active == true%>
             <%= button_to "Deactivate", course_question_activate_path(@course, question, :activate => false), :method => :activate %>
