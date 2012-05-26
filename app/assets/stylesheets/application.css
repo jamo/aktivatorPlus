@@ -19,6 +19,7 @@
 
 body {
     margin: 1em auto;
+    min-width: 800px;
     max-width: 60%;
     border: solid 1px darkgrey;
 }
