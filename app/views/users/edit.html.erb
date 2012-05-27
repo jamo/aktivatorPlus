@@ -1,7 +1,0 @@
-<h1>Editing user</h1>
-
-<% if  session[:user_id] == @user.id or @user.administrator? %>
-  <%= render 'form' %>
-<% else %>
-  <h2 style=" color: red;">LOL Ei oikeutta muuttaa toisen tietoja!</h2>
-<% end %>
