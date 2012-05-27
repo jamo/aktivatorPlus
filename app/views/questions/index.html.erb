@@ -13,7 +13,7 @@
   </tr>
   <% @course.questions.each do |question| %>
     <tr  class="listedQuestion" >
-      <% if session[:user_id]%>
+      <% if user_signed_in?%>
         <td ><%= link_to "#{question.name}", course_question_path(@course.id, question) %></td>
         <td>
           <% if question.active == true%>

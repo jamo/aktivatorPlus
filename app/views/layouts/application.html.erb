@@ -32,7 +32,7 @@
         </script>
     </head>
     <body id="kaikki">
-      <% if session[:user_id]%>
+      <% if user_signed_in?%>
         <div class="withNavi">
           <% #debugger %>
           <div class="navi">
