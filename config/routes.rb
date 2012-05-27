@@ -30,7 +30,7 @@ end
 #  resources :users
 
   resources :courses, :only => [:index, :new, :edit, :create, :update, :destroy, :comments] do
-    resources :questions, :only => [:index, :new, :create, :show, :activate]  do
+    resources :questions, :only => [:index, :new, :create, :show, :activate, :destroy]  do
       resources :answer_options
       resources :answers, :only => [:create, :new]
       resources :comments, :only => [:index]
