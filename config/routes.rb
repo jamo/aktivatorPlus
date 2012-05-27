@@ -3,6 +3,13 @@ AktivatorPlus::Application.routes.draw do
 
   devise_for :users
 
+  devise_scope :user do
+  get "login", :to => "devise/sessions#new"
+  get "logout", :to => "devise/sessions#destroy"
+end
+
+#  match "login/" => "devise/sessions#new", :as => :login_user
+#  match "logout/" => "devise/sessions#destroy", :as => :logout_user
 #  match "users/:id/makeAdmin" => "users#makeAdmin", :as => :user_to_admin
   match "courses/:id/comments" => "courses#comments", :as => :course_comments
   match "courses/:course_id/questions/:id/activate" => "questions#activate", :as => :course_question_activate
