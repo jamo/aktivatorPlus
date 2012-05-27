@@ -89,7 +89,7 @@ ul.navigaatio_class{
 }
 
 #navigaatio_id.navigaatio_class {
-  border: 10px solid #E0E0E0;/#D6D1B9;/*Tässä jtn hassua, mut näyttää hyvältä*/
+  border: 10px solid #E0E0E0;
   padding: 10px; }
   #navigaatio_id.navigaatio_class #js_navigation {
     float: left;
