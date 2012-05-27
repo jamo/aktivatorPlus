@@ -59,4 +59,12 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    @course = Course.find(params[:course_id])
+    @question = @course.questions.find(params[:id])
+    debugger
+    @question.destroy
+    redirect_to course_questions_path(@course)
+  end
+
 end
