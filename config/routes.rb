@@ -15,7 +15,7 @@ end
 #  match "users/:id/makeAdmin" => "users#makeAdmin", :as => :user_to_admin
   match "courses/:id/comments" => "courses#comments", :as => :course_comments
   match "courses/:course_id/questions/:id/activate" => "questions#activate", :as => :course_question_activate
-  get 'admin' => 'admin#index'
+  get 'admin' => 'admin#index', :as => 'admin'
  # controller :sessions do
  #   get 'login' => :new
  #   post 'login' => :create
