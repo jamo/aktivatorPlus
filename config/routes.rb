@@ -1,6 +1,8 @@
 AktivatorPlus::Application.routes.draw do
 
 
+  mount RailsAdmin::Engine => '/railsadmin', :as => 'rails_admin'
+
   devise_for :users
 
   devise_scope :user do
