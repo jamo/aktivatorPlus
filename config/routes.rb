@@ -1,14 +1,16 @@
 AktivatorPlus::Application.routes.draw do
 
-  match "users/:id/makeAdmin" => "users#makeAdmin", :as => :user_to_admin
-  match "courses/:id/comments" => "courses#comments", :as => :course_comments
-  match "courses/:course_id/questions/:id/activate" => "questions#activate", :as => :course_question_activate
+  devise_for :users
+
+#  match "users/:id/makeAdmin" => "users#makeAdmin", :as => :user_to_admin
+#  match "courses/:id/comments" => "courses#comments", :as => :course_comments
+#  match "courses/:course_id/questions/:id/activate" => "questions#activate", :as => :course_question_activate
   get 'admin' => 'admin#index'
-  controller :sessions do
-    get 'login' => :new
-    post 'login' => :create
-    delete 'logout' => :destroy
-  end
+ # controller :sessions do
+ #   get 'login' => :new
+ #   post 'login' => :create
+ #   delete 'logout' => :destroy
+ # end
   #get "admin/index"
 
   #get "sessions/new"

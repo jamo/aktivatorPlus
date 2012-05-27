@@ -74,8 +74,8 @@ SimpleNavigation::Configuration.run do |navigation|
       a.item :users, 'New User', new_user_path
       a.item :users, 'Show Users', users_path
     end
-    primary.item :logout, 'Logout', logout_path, :method => :delete
-    button_to "Sign out", logout_path, :method => :delete
+    #primary.item :logout, 'Logout', logout_path, :method => :delete
+    #button_to "Sign out", logout_path, :method => :delete
 
 
 

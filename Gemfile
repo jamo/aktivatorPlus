@@ -2,6 +2,9 @@ source 'http://rubygems.org'
 ##Asenna paikallisesti
 #bundle install --without production
 
+gem "cancan"
+gem 'devise'
+
 gem 'rails', '3.2.2'
 gem 'googlecharts'
 #simple-navigation

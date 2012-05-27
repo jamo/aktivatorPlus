@@ -17,11 +17,11 @@
   <% @courses.each do |course| %>
     <tr class="listedCourses">
       <td><%= link_to "#{course.name}", course_questions_path(course) %></td>
-      <% if session[:user_id] %>
+      <% if user_signed_in? %>
         <td><%= link_to 'Rename', edit_course_path(course) %></td>
       <% end %>
 
-      <% if @admin %>
+      <% if user_signed_in? %>
         <td><%= link_to 'Delete', course, confirm: 'Are you sure', method: :delete %> </td>
       <% end %>
     </tr>
