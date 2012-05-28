@@ -8,7 +8,7 @@ RailsAdmin.config do |config|
   # require 'i18n'
   # I18n.default_locale = :de
   config.authorize_with do
-      redirect_to root_path(nil) unless current_user.admin?
+      redirect_to root_path(nil) unless current_user.super_admin?
   end
 
   config.current_user_method { current_user } # auto-generated
