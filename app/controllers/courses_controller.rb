@@ -64,7 +64,7 @@ class CoursesController < ApplicationController
     end
   end
 
-  # DELETE /courses/1
+  # DELETE/courses/1
   # DELETE /courses/1.json
   def destroy
     @course = Course.find(params[:id])

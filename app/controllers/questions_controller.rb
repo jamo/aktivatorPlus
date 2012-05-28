@@ -63,7 +63,7 @@ class QuestionsController < ApplicationController
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:id])
     @question.destroy
-    redirect_to course_questions_path
+    redirect_to course_questions_path(@course)
   end
 
 end

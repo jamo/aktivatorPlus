@@ -36,7 +36,7 @@
     <h3>No Comments</h3>
   <% end %>
 
-  <%= pluralize(@comments.size, 'comment') unless @comments == nil %>
+  <%= pluralize(@comments.size, 'comment') unless @comments.empty? %>
   <% @comments.each do |c| %>
     <div class="commentComment">
       <p ><%= c.created_at%>
@@ -45,6 +45,7 @@
     </div>
     <br />
   <% end %>
+  <%= button_to 'Delete', course_question_path, confirm: 'Are you sure', method: :delete %>
 <% end %>
   <% if 1==1 %>
     <%= button_to 'Delete', course_question_path, confirm: "Do you really want to delete this question and it's answers", method: :delete %>
