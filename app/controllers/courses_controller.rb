@@ -6,12 +6,10 @@ class CoursesController < ApplicationController
     @courses = Course.all
     @admin = false
     @admin = User.find(session[:user_id]).administrator? unless session[:user_id] == nil
-    format.html # index.html.erb
   end
 
   def new
     @course = Course.new
-    format.html
   end
 
   # GET /courses/1/edit
