@@ -37,6 +37,7 @@ class QuestionsController < ApplicationController
   end
 
   def activate
+    redirect_to root_path unless current_user
     session[:return_to] = request.referer
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:id])
@@ -60,6 +61,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    redirect_to root_path unless current_user.admin?
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:id])
     @question.destroy

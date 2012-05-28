@@ -3,4 +3,6 @@ class Question < ActiveRecord::Base
   has_many :answer_options, :dependent => :destroy
   has_many :answers, :dependent => :destroy
   has_many :comments, :dependent => :destroy
+
+#  attr_accessor :active
 end

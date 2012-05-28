@@ -4,8 +4,6 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
-    @admin = false
-    @admin = User.find(session[:user_id]).admin? unless session[:user_id] == nil
   end
 
   def new
@@ -21,7 +19,6 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = Course.new(params[:course])
-
     respond_to do |format|
       if @course.save
         format.html { redirect_to course_questions_path(@course), notice: 'Course was successfully created.' }
@@ -33,8 +30,8 @@ class CoursesController < ApplicationController
 
 
   def update
-    @course = Course.find(params[:id])
 
+    @course = Course.find(params[:id])
     respond_to do |format|
       if @course.update_attributes(params[:course])
         format.html { redirect_to courses_path, notice: 'Course was successfully updated.' }
@@ -45,6 +42,7 @@ class CoursesController < ApplicationController
   end
 
   def destroy
+    redirect_to root_path unless current_user.admin?
     @course = Course.find(params[:id])
     @course.destroy
 
@@ -53,6 +51,7 @@ class CoursesController < ApplicationController
   end
 
   def comments
-     @course = Course.find(params[:id])
+    redirect_to root_path unless current_user.admin?
+    @course = Course.find(params[:id])
   end
 end
