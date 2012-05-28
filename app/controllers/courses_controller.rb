@@ -6,23 +6,12 @@ class CoursesController < ApplicationController
     @courses = Course.all
     @admin = false
     @admin = User.find(session[:user_id]).administrator? unless session[:user_id] == nil
-
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @courses }
-    end
+    format.html # index.html.erb
   end
 
-  # GET /courses/new
-  # GET /courses/new.json
   def new
     @course = Course.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @course }
-    end
+    format.html
   end
 
   # GET /courses/1/edit

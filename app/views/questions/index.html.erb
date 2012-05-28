@@ -12,7 +12,7 @@
     <th><h2>Questions: </h2></th>
   </tr>
   <% @course.questions.each do |question| %>
-    <tr  class="listedQuestion" >
+    <tr  class="listedQuestion" data-href="<%= get_link %>" >
       <% if user_signed_in?%>
         <td ><%= link_to "#{question.name}", course_question_path(@course.id, question) %></td>
         <td>

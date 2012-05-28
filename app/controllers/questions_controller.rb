@@ -52,7 +52,7 @@ class QuestionsController < ApplicationController
 
   def index
     @course = Course.find(params[:course_id])
-    if session[:user_id]
+    if user_signed_in?
       @questions = @course.questions
     else
       @questions =  @course.questions.find(:all,:conditions => { :active => true})
@@ -64,6 +64,15 @@ class QuestionsController < ApplicationController
     @question = @course.questions.find(params[:id])
     @question.destroy
     redirect_to course_questions_path(@course)
+  end
+
+  def get_link
+    if user_signed_in?
+      @link = course_question_path(@course.id, question)
+    else
+      @link = new_course_question_answer_path(@course.id, question)
+    end
+
   end
 
 end
