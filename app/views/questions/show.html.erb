@@ -31,7 +31,7 @@
 <%= link_to 'Return back', courses_path %>
 <br />
 <br />
-<% if @admin %>
+<% if current_user %>
   <% if @comments.empty?%>
     <h3>No Comments</h3>
   <% end %>
@@ -45,9 +45,8 @@
     </div>
     <br />
   <% end %>
-  <%= button_to 'Delete', course_question_path, confirm: 'Are you sure', method: :delete %>
 <% end %>
-  <% if 1==1 %>
-    <%= button_to 'Delete', course_question_path, confirm: "Do you really want to delete this question and it's answers", method: :delete %>
-  <% end %>
+<% if current_user.admin? %>
+  <%= button_to 'Delete', course_question_path, confirm: "Do you really want to delete this question and it's answers", method: :delete %>
+<% end %>
 
