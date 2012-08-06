@@ -28,7 +28,6 @@ GEM
     activesupport (3.2.2)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    archive-tar-minitar (0.5.2)
     arel (3.0.2)
     bbenezech-nested_form (0.0.6)
     bcrypt-ruby (3.0.1)
@@ -42,6 +41,13 @@ GEM
       execjs
     coffee-script-source (1.3.1)
     columnize (0.3.6)
+    debugger (1.2.0)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.1.1)
+      debugger-ruby_core_source (~> 1.1.3)
+    debugger-linecache (1.1.2)
+      debugger-ruby_core_source (>= 1.1.1)
+    debugger-ruby_core_source (1.1.3)
     devise (2.1.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.7)
@@ -68,8 +74,6 @@ GEM
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
     libv8 (3.3.10.4)
-    linecache19 (0.5.12)
-      ruby_core_source (>= 0.1.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -122,16 +126,6 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     remotipart (1.0.2)
-    ruby-debug-base19 (0.11.25)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby_core_source (>= 0.1.4)
-    ruby-debug19 (0.11.6)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby-debug-base19 (>= 0.11.19)
-    ruby_core_source (0.1.5)
-      archive-tar-minitar (>= 0.5.2)
     sass (3.1.16)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -163,6 +157,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.2)
+  debugger
   devise
   googlecharts
   jquery-rails
@@ -170,7 +165,6 @@ DEPENDENCIES
   rails (= 3.2.2)
   rails_admin
   rails_superfish
-  ruby-debug19
   sass-rails (~> 3.2.2)
   simple-navigation
   sqlite3

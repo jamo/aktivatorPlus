@@ -20,10 +20,13 @@
       <% if user_signed_in? %>
         <td><%= link_to 'Rename', edit_course_path(course) %></td>
       <% end %>
-
+			<% debugger %>
+			<% begin %>
       <% if current_user.admin? %>
         <td><%= link_to 'Delete', course, confirm: 'Are you sure', method: :delete %> </td>
       <% end %>
+			<%rescue%>
+			<%end%>
     </tr>
   <% end %>
 </table>

@@ -17,7 +17,8 @@ gem 'rails_superfish'
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development do
   gem 'sqlite3'
-  gem 'ruby-debug19', :require => 'ruby-debug'
+#  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'debugger'
   #gem 'cucumber-rails'
   #gem 'cucumber-rails-training-wheels'
   #gem 'database_cleaner'
