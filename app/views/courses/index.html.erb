@@ -17,12 +17,11 @@
   <% @courses.each do |course| %>
     <tr class="listedCourses" data-href="<%= course_questions_path(course) %>">
       <td><%= link_to "#{course.name}", course_questions_path(course) %></td>
-      <% if user_signed_in? %>
+      <% if @current_user %>
         <td><%= link_to 'Rename', edit_course_path(course) %></td>
       <% end %>
-			<% debugger %>
 			<% begin %>
-      <% if current_user.admin? %>
+      <% if @current_user.admin? %>
         <td><%= link_to 'Delete', course, confirm: 'Are you sure', method: :delete %> </td>
       <% end %>
 			<%rescue%>

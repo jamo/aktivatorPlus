@@ -12,12 +12,12 @@
     <th><h2>Questions: </h2></th>
   </tr>
   <% @course.questions.each do |question| %>
-    <% if user_signed_in? %>
+    <% if @current_user %>
       <tr  class="listedQuestion" data-href="<%=  course_question_path(@course.id, question) %>" >
     <% else %>
       <tr  class="listedQuestion" data-href="<%= new_course_question_answer_path(@course.id, question) %>" >
     <% end %>
-      <% if user_signed_in?%>
+      <% if @current_user%>
         <td ><%= link_to "#{question.name}", course_question_path(@course.id, question) %></td>
         <td>
           <% if question.active == true%>
