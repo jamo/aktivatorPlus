@@ -1,12 +1,12 @@
 class AnswersController < ApplicationController
- skip_before_filter :authenticate_user!, :only => [:new, :create]
+ skip_before_filter :authenticate_user, :only => [:new, :create]
 
   def new
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:question_id])
-    if session[("answered_to_"+(params[:question_id]).to_s).to_sym]
-      redirect_to course_question_path(@course, @question), :notice => "You have already answered to this question!"
-    end
+    #if session[("answered_to_"+(params[:question_id]).to_s).to_sym]
+    #  redirect_to course_question_path(@course, @question), :notice => "You have already answered to this question!"
+    #end
 
     if @question.active != true
       redirect_to course_question_path(@course, @question), :notice => "This question is not active!"
