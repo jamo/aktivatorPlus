@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 #bundle install --without production
 
 gem 'rails_admin'
-gem 'devise'
+#gem 'devise'
 
 gem 'rails', '3.2.2'
 gem 'googlecharts'

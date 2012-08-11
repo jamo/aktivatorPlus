@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  skip_before_filter :authenticate_user!, :only => [:show, :index]
+  skip_before_filter :authenticate_user, :only => [:show, :index]
 
   def new
     @course = Course.find(params[:course_id])
@@ -32,7 +32,7 @@ class QuestionsController < ApplicationController
     @vastausTulokset.each{ |int| @answerCount += int }
     @comments = Comment.find_all_by_question_id(@question.id)
     @admin = false
-    @admin = User.find(session[:user_id]).administrator? unless session[:user_id] == nil
+    @admin = User.find(session[:user_id]).admin? unless session[:user_id] == nil
 
   end
 

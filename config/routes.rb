@@ -1,14 +1,19 @@
 AktivatorPlus::Application.routes.draw do
 
 
+  resources :sessions
+
+  resources :users
+
   mount RailsAdmin::Engine => '/railsadmin', :as => 'rails_admin'
 
-  devise_for :users
-
-  devise_scope :user do
-  get "login", :to => "devise/sessions#new"
-  get "logout", :to => "devise/sessions#destroy"
-end
+  match "signup", :to => "users#new"
+  match "login", :to => "sessions#login"
+  match "logout", :to => "sessions#logout"
+  match "home", :to => "sessions#home"
+  match "profile", :to => "sessions#profile"
+  match "setting", :to => "sessions#setting"
+  
 
 #  match "login/" => "devise/sessions#new", :as => :login_user
 #  match "logout/" => "devise/sessions#destroy", :as => :logout_user
