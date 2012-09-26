@@ -20,7 +20,8 @@ class AnswersController < ApplicationController
     @answer = @question.answers.build(:choice => params[:answer_option_id], :question_id => @question_id, :course_id => @course_id, :answer_option_id => params[:answer_option_id])
     @answer.save! if @answer
     session[("answered_to_"+(params[:question_id]).to_s).to_sym] = params[:question_id]
-    @comment =  @question.comments.build(:course_id => params[:course_id], :body => params[:comment])  unless params[:comment].blank?
+    #answer_id= answer_option_id
+    @comment =  @question.comments.build(:course_id => params[:course_id], :body => params[:comment], :answer_id =>  params[:answer_option_id])  unless params[:comment].blank?
     @comment.save! if @comment
     redirect_to course_question_path(@course, @question)
   end

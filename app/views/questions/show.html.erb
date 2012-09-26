@@ -39,7 +39,7 @@
   <%= pluralize(@comments.size, 'comment') unless @comments.empty? %>
   <% @comments.each do |c| %>
     <div class="commentComment">
-      <p ><%= c.created_at%>
+      <p ><%= c.created_at%> <% unless c.answer_id.blank?%> | Answered to: <%= AnswerOption.find(c.answer_id).title%><%end%>
       <p id="poikki"><%= c.body%></p>
       </p>
     </div>
