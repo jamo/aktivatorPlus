@@ -10,6 +10,7 @@ gem 'googlecharts'
 #simple-navigation
 gem 'simple-navigation'
 gem 'rails_superfish'
+gem 'turbolinks'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
