@@ -6,8 +6,8 @@ AktivatorPlus::Application.routes.draw do
   resources :users
 
   mount RailsAdmin::Engine => '/railsadmin', :as => 'rails_admin'
-
-  match "signup", :to => "users#new"
+#Poistetaan uusien käyttäjien helppo teko :)
+  #match "signup", :to => "users#new"
   match "login", :to => "sessions#login"
   match "logout", :to => "sessions#logout"
   match "home", :to => "sessions#home"
