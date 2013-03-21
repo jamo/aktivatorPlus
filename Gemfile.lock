@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/aslon/rails_superfish.git
+  revision: 9f0dfd13d678fc3ca3bbc0f6b4b7872e9745680f
+  specs:
+    rails_superfish (0.1.8)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -107,7 +113,6 @@ GEM
       rails (~> 3.1)
       remotipart (~> 1.0)
       sass-rails (~> 3.1)
-    rails_superfish (0.1.8)
     railties (3.2.2)
       actionpack (= 3.2.2)
       activesupport (= 3.2.2)
@@ -155,7 +160,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.2)
   rails_admin
-  rails_superfish
+  rails_superfish!
   sass-rails (~> 3.2.2)
   simple-navigation
   sqlite3

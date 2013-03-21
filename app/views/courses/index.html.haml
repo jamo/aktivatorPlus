@@ -1,0 +1,23 @@
+- if flash[:warning] or flash[:notice]
+  <div id="notice"
+  - if flash[:warning]
+    class="warning"
+  >
+  \#{flash[:warning] || flash[:notice]}
+  :javascript
+    setTimeout("new Effect.Fade('notice');", 15000)
+%h1 List of Courses
+%table
+  %tr
+    %th
+      %h2 Name
+  - @courses.each do |course|
+    %tr.listedCourses{"data-href" => course_questions_path(course)}
+      %td= link_to "#{course.name}", course_questions_path(course)
+      - if @current_user
+        %td= link_to 'Rename', edit_course_path(course)
+      - begin
+        - if @current_user.admin?
+          %td
+            = link_to 'Delete', course, confirm: 'Are you sure', method: :delete
+      - rescue

@@ -1,0 +1,18 @@
+- if flash[:warning] or flash[:notice]
+  <div id="notice"
+  - if flash[:warning]
+    class="warning"
+  >
+  \#{flash[:warning] || flash[:notice]}
+  :javascript
+    setTimeout("new Effect.Fade('notice');", 15000)
+%p#notice= notice
+%h1 answers#show
+%h2
+  = @question.name
+%ol
+  - @question.answer_options.each do |ao|
+    %li
+      = ao.title
+      = ao.answers.count
+= link_to 'New answer', new_course_question_answer_path(@course.id, @question.id)

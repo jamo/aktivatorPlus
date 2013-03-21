@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
   def new
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:question_id])
-    if session[("answered_to_"+(params[:question_id]).to_s).to_sym] and not @current_user.admin
+    if session[("answered_to_"+(params[:question_id]).to_s).to_sym] and not @current_user
       redirect_to course_question_path(@course, @question), :notice => "You have already answered to this question!" 
     end
 

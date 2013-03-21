@@ -1,0 +1,17 @@
+%h1= "#{@course.name}"
+%h2= "#{@question.name}"
+- if (@question.active?)
+  %ul.newAnswer
+    = form_for([@course, @question ,@question.answers.build])  do |f|
+      - @question.answer_options.each do |ao|
+        %li
+          = radio_button_tag 'answer_option_id', ao.id
+          = ao.title
+          %br/
+      %p Comment
+      = text_area_tag 'comment', nil,  :rows => 4, :cols => 50
+      %br/
+      = f.submit 'Submit'
+  = link_to 'Show results', course_question_path(@course.id, @question)
+- else
+  %h2{:style => "color: red;"} This Answer Is Not Active

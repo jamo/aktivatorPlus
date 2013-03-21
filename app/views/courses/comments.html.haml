@@ -1,0 +1,21 @@
+- if flash[:warning] or flash[:notice]
+  <div id="notice"
+  - if flash[:warning]
+    class="warning"
+  >
+  \#{flash[:warning] || flash[:notice]}
+  :javascript
+    setTimeout("new Effect.Fade('notice');", 15000)
+%h1
+  Listing all comments for #{"#{@course.name}"}
+- @course.questions.each do |q|
+  .commentCourse
+    %h2= q.name
+    - if q.comments.empty?
+      %h3 Kurssilla ei kommentteja
+    - else
+      - q.comments.each do |c|
+        .commentComment
+          %p
+            = c.created_at
+            %p#poikki= c.body

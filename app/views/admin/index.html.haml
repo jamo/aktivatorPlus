@@ -1,0 +1,23 @@
+- if flash[:warning] or flash[:notice]
+  <div id="notice"
+  - if flash[:warning]
+    class="warning"
+  >
+  \#{flash[:warning] || flash[:notice]}
+  :javascript
+    setTimeout("new Effect.Fade('notice');", 15000)
+- if @current_user
+  %h1 Welcome
+  It's #{Time.now}
+  %br/
+  We have #{pluralize(@total_courses, "course")}.
+  %br/
+  We have #{pluralize(@total_questions, "question")}.
+  %br/
+  We have #{pluralize(@total_answer_options, "answer option")}.
+  %br/
+  We have #{pluralize(@total_answers, "answer")}.
+  %br/
+- else
+  %p
+    %font{:color => "red", :size => "+5"} Access denied

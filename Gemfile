@@ -9,7 +9,7 @@ gem 'rails', '3.2.2'
 gem 'googlecharts'
 #simple-navigation
 gem 'simple-navigation'
-gem 'rails_superfish'
+gem 'rails_superfish', git: "https://github.com/aslon/rails_superfish.git"
 gem 'turbolinks'
 
 # Bundle edge Rails instead:

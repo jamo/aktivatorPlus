@@ -1,0 +1,7 @@
+%h1 New user
+- if flash[:alert]
+  %p.flash-error= flash[:alert]
+- if flash[:notice]
+  %p.flash-notice= flash[:notice]
+= render 'form'
+= link_to 'Back', users_path

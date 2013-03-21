@@ -1,0 +1,16 @@
+- @page_title = "UserAuth | Login"
+.login
+  - if flash[:error]
+    %p.flash-error= flash[:error]
+  - if flash[:notice]
+    %p.flash-notice= flash[:notice]
+  .Sign_Form
+    %h1 Log in
+    = form_tag(:action => 'login') do
+      %p
+        Username or Email:
+        = text_field_tag(:username_or_email)
+      %p
+        Password:
+        = password_field_tag :login_password
+      = submit_tag("Log In")
