@@ -11,7 +11,7 @@
       %p Comment
       = text_area_tag 'comment', nil,  :rows => 4, :cols => 50
       %br/
-      = f.submit 'Submit'
+      = f.submit 'Submit', class: 'btn btn-primary'
   = link_to 'Show results', course_question_path(@course.id, @question)
 - else
-  %h2{:style => "color: red;"} This Answer Is Not Active
+  %h2{:style => "color: red;"} This bnswer is not Active

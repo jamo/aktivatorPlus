@@ -5,11 +5,11 @@ class AnswersController < ApplicationController
     @course = Course.find(params[:course_id])
     @question = @course.questions.find(params[:question_id])
     if session[("answered_to_"+(params[:question_id]).to_s).to_sym] and not @current_user
-      redirect_to course_question_path(@course, @question), :notice => "You have already answered to this question!" 
+      redirect_to course_question_path(@course, @question), :alert => "You have already answered to this question!" 
     end
 
     if @question.active != true
-      redirect_to course_question_path(@course, @question), :notice => "This question is not active!"
+      redirect_to course_question_path(@course, @question), :alert => "This question is not active!"
     end
     @answer = @question.answers.new(:course_id => params[:course_id], :question_id => params[:question_id])
   end
@@ -23,7 +23,7 @@ class AnswersController < ApplicationController
     #answer_id= answer_option_id
     @comment =  @question.comments.build(:course_id => params[:course_id], :body => params[:comment], :answer_id =>  params[:answer_option_id])  unless params[:comment].blank?
     @comment.save! if @comment
-    redirect_to course_question_path(@course, @question)
+    redirect_to course_question_path(@course, @question), notice: "Thank you for your answer"
   end
 
 

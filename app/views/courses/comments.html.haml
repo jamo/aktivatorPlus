@@ -1,11 +1,3 @@
-- if flash[:warning] or flash[:notice]
-  <div id="notice"
-  - if flash[:warning]
-    class="warning"
-  >
-  \#{flash[:warning] || flash[:notice]}
-  :javascript
-    setTimeout("new Effect.Fade('notice');", 15000)
 %h1
   Listing all comments for #{"#{@course.name}"}
 - @course.questions.each do |q|

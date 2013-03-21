@@ -1,16 +1,11 @@
-- if flash[:warning] or flash[:notice]
-  <div id="notice"
-  - if flash[:warning]
-    class="warning"
-  >
-  \#{flash[:warning] || flash[:notice]}
-  :javascript
-    setTimeout("new Effect.Fade('notice');", 15000)
 %h1 List of Courses
-%table
-  %tr
+%table.table-striped.table-hover
+  %thead
     %th
-      %h2 Name
+      Name
+    %th
+    %th
+  %tbody
   - @courses.each do |course|
     %tr.listedCourses{"data-href" => course_questions_path(course)}
       %td= link_to "#{course.name}", course_questions_path(course)

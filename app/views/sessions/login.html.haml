@@ -1,16 +1,15 @@
-- @page_title = "UserAuth | Login"
-.login
-  - if flash[:error]
-    %p.flash-error= flash[:error]
-  - if flash[:notice]
-    %p.flash-notice= flash[:notice]
-  .Sign_Form
-    %h1 Log in
-    = form_tag(:action => 'login') do
-      %p
-        Username or Email:
+.Sign_Form
+  %h1 Log in
+  = form_tag(:action => 'login', html: { class: 'form-horizontal'}) do
+    .control-group
+      .control-label
+        = label_tag 'Username or Email:'
+      .controls
         = text_field_tag(:username_or_email)
-      %p
+    .control-group
+      .control-label
         Password:
+      .controls
         = password_field_tag :login_password
-      = submit_tag("Log In")
+    .actions
+      = submit_tag "Log In", class: 'btn btn-primary'

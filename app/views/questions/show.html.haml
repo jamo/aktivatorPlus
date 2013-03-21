@@ -1,13 +1,12 @@
 %h1
   = @course.name
-%p#notice= notice
 %h2
   = @question.name
 - if  @current_user
   - if @question.active?
-    = button_to "Deactivate",course_question_activate_path(@course, @question, :activate => false) , :method => :activate
+    = button_to "Deactivate",course_question_activate_path(@course, @question, :activate => false) , :method => :activate, class: 'btn btn-warning btn-danger'
   - else
-    = button_to "Activate",course_question_activate_path(@course, @question, :activate => true) , :method => :activate
+    = button_to "Activate",course_question_activate_path(@course, @question, :activate => true) , :method => :activate, class: 'btn btn-warning btn-warning'
 %ol
   - @question.answer_options.each do |ao|
     %li
@@ -38,4 +37,4 @@
         %p#poikki= c.body
     %br/
 - if @current_user and @current_user.admin?
-  = button_to 'Delete', course_question_path, confirm: "Do you really want to delete this question and it's answers", method: :delete
+  = button_to 'Delete', course_question_path, confirm: "Do you really want to delete this question and it's answers", method: :delete, class: 'btn btn-danger'

@@ -5,13 +5,13 @@ source 'http://rubygems.org'
 gem 'rails_admin'
 #gem 'devise'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.8'
 gem 'googlecharts'
 #simple-navigation
 gem 'simple-navigation'
-gem 'rails_superfish', git: "https://github.com/aslon/rails_superfish.git"
+#gem 'rails_superfish', git: "https://github.com/aslon/rails_superfish.git"
 gem 'turbolinks'
-
+gem 'haml-rails'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
@@ -42,6 +42,8 @@ group :assets do
   gem 'sass-rails', "  ~> 3.2.2"
   gem 'coffee-rails', "~> 3.2.2"
   gem 'uglifier'
+  gem "less-rails"
+  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'
